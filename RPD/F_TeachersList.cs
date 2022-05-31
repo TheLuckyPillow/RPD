@@ -12,8 +12,8 @@ namespace RPD_1
 {
     public partial class F_TeachersList : Form
     {
-        private Serializer ser = new Serializer();
-        private List<Teachers> lst = new List<Teachers>();
+        private Serializer ser = new Serializer(); //объект класса Serialize для работы с файлом "save_teachers.json"
+        private List<Teachers> lst = new List<Teachers>(); //Список объектов класса Teachers
 
 
         public F_TeachersList()
@@ -23,75 +23,48 @@ namespace RPD_1
 
         private void F_TeachersList_Load(object sender, EventArgs e)
         {
-            //lst = ser.Deserialize_teachers(); //записываем в список объектов Discipline все что уже есть в файле
-
-            //foreach (Teachers t in lst)
-            //{
-            //    listBox1.Items.Add(t.fIO);
-            //}
-            lst = ser.Deserialize_List_teachers();
+            lst = ser.Deserialize_List_teachers(); //загрузка списка преподавателей
             listBox1.DataSource = lst;
         }
-
 
         private void btn_Add_Click(object sender, EventArgs e)
         {
             lst.Add(new Teachers(textBox_FIO.Text, textBox_Mail.Text));
-            //lst.Add(new Teachers(textBox_FIO.Text, textBox_Mail.Text));
-            ser.Serialize_list_teachers(lst);
-           
-            //listBox1.Items.Add(lst.Last().fIO);
-            //ser.Serialize(lst.Last());
+
+            listBox1.ClearSelected();
+            ser.Serialize_list_teachers(lst); //перезапись файла сохранения с новыми пар-рами
+            listBox1.DataSource = null; //обновление listbox
+            listBox1.DataSource = lst;
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            textBox_Mail.Text = lst[listBox1.SelectedIndex].mail;
-            textBox_FIO.Text = lst[listBox1.SelectedIndex].fIO;
-            
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_Save_Click(object sender, EventArgs e)
         {
             lst[listBox1.SelectedIndex].fIO = textBox_FIO.Text;
-            lst[listBox1.SelectedIndex].mail = textBox_Mail.Text;
-            ser.Serialize_list_teachers(lst);
-            //listBox1.; как обновить?
+            lst[listBox1.SelectedIndex].mail = textBox_Mail.Text; //изменение в списке характеристик из TextBox'а
 
+            listBox1.ClearSelected();
+            ser.Serialize_list_teachers(lst);//перезапись файла сохранения с новыми пар-рами
+            listBox1.DataSource = null; //обновление listbox
+            listBox1.DataSource = lst;
         }
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
             lst.RemoveAt(listBox1.SelectedIndex);
-            ser.Serialize_list_teachers(lst);
 
+            listBox1.ClearSelected();
+            ser.Serialize_list_teachers(lst);//перезапись файла сохранения с новыми пар-рами
+            listBox1.DataSource = null; //обновление listbox
+            listBox1.DataSource = lst;
         }
 
-        //private void btn_delete_Click(object sender, EventArgs e)
-        //{
-        //    checkedListBox.ClearSelected();
-
-        //    Stack<int> stack = new Stack<int>(); //индексы которые нужно удалить
-
-        //    //List<int> deleted_indexes_tmp = new List<int>();
-        //    for (int i = checkedListBox.Items.Count - 1; i >= 0; i--)
-        //    {
-        //        if (checkedListBox.GetItemChecked(i))
-        //        {
-        //            checkedListBox.Items.RemoveAt(i);
-        //            stack.Push(i);
-        ////        }
-        ////    }
-
-        //    var deleted_indexes_tmp = new Stack<int>(stack);
-
-        //    while (deleted_indexes_tmp.Count > 0)
-        //    {
-
-        //        lst.RemoveAt(deleted_indexes_tmp.Pop());
-        //    }
-
-        //    ser.Update(lst);
-        //}
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedIndex != -1)
+            {
+                textBox_Mail.Text = lst[listBox1.SelectedIndex].mail;
+                textBox_FIO.Text = lst[listBox1.SelectedIndex].fIO;
+            } //Если элемент не выделен, срабатывает SelectedIndexChanged, пытаясь использовать элемент, который не выделен
+        }
     }
 }

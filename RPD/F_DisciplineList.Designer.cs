@@ -29,11 +29,8 @@
         private void InitializeComponent()
         {
             this.label_Disc_Name = new System.Windows.Forms.Label();
-            this.button_DisciplineAdd = new System.Windows.Forms.Button();
             this.textBox_DisciplineName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox_teachers = new System.Windows.Forms.ComboBox();
-            this.button_SaveZET = new System.Windows.Forms.Button();
             this.numericUpDown_ZET = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.numericUpDown_AcademicHours = new System.Windows.Forms.NumericUpDown();
@@ -45,8 +42,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.checkedListBox = new System.Windows.Forms.CheckedListBox();
-            this.button_Delete = new System.Windows.Forms.Button();
+            this.listBox_Discipline = new System.Windows.Forms.ListBox();
+            this.btn_Add = new System.Windows.Forms.Button();
+            this.btn_Save = new System.Windows.Forms.Button();
+            this.comboBox_TeachersName = new System.Windows.Forms.ComboBox();
+            this.btn_delete = new System.Windows.Forms.Button();
+            this.textBox_TeachersName = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_ZET)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_AcademicHours)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_LectionsHours)).BeginInit();
@@ -62,16 +63,6 @@
             this.label_Disc_Name.Size = new System.Drawing.Size(125, 13);
             this.label_Disc_Name.TabIndex = 1;
             this.label_Disc_Name.Text = "Название дисциплины:";
-            // 
-            // button_DisciplineAdd
-            // 
-            this.button_DisciplineAdd.Location = new System.Drawing.Point(143, 607);
-            this.button_DisciplineAdd.Name = "button_DisciplineAdd";
-            this.button_DisciplineAdd.Size = new System.Drawing.Size(139, 23);
-            this.button_DisciplineAdd.TabIndex = 2;
-            this.button_DisciplineAdd.Text = "Добавить";
-            this.button_DisciplineAdd.UseVisualStyleBackColor = true;
-            this.button_DisciplineAdd.Click += new System.EventHandler(this.button_DisciplineAdd_Click);
             // 
             // textBox_DisciplineName
             // 
@@ -89,28 +80,6 @@
             this.label2.Size = new System.Drawing.Size(86, 13);
             this.label2.TabIndex = 5;
             this.label2.Text = "Преподаватель";
-            // 
-            // comboBox_teachers
-            // 
-            this.comboBox_teachers.FormattingEnabled = true;
-            this.comboBox_teachers.Items.AddRange(new object[] {
-            "Беднякова Татьяна Михайловна",
-            "Савватеева Татьяна Петровна",
-            "Махалкина Татьяна Олеговна"});
-            this.comboBox_teachers.Location = new System.Drawing.Point(383, 87);
-            this.comboBox_teachers.Name = "comboBox_teachers";
-            this.comboBox_teachers.Size = new System.Drawing.Size(392, 21);
-            this.comboBox_teachers.TabIndex = 6;
-            // 
-            // button_SaveZET
-            // 
-            this.button_SaveZET.Location = new System.Drawing.Point(438, 248);
-            this.button_SaveZET.Name = "button_SaveZET";
-            this.button_SaveZET.Size = new System.Drawing.Size(232, 23);
-            this.button_SaveZET.TabIndex = 7;
-            this.button_SaveZET.Text = "Сохранить";
-            this.button_SaveZET.UseVisualStyleBackColor = true;
-            this.button_SaveZET.Click += new System.EventHandler(this.button_SaveZET_Click);
             // 
             // numericUpDown_ZET
             // 
@@ -203,32 +172,76 @@
             this.button2.Text = "создать шаблон";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // checkedListBox
+            // listBox_Discipline
             // 
-            this.checkedListBox.FormattingEnabled = true;
-            this.checkedListBox.Location = new System.Drawing.Point(12, 12);
-            this.checkedListBox.Name = "checkedListBox";
-            this.checkedListBox.Size = new System.Drawing.Size(297, 589);
-            this.checkedListBox.TabIndex = 19;
-            this.checkedListBox.SelectedIndexChanged += new System.EventHandler(this.checkedListBox_SelectedIndexChanged);
+            this.listBox_Discipline.FormattingEnabled = true;
+            this.listBox_Discipline.Location = new System.Drawing.Point(12, 12);
+            this.listBox_Discipline.Name = "listBox_Discipline";
+            this.listBox_Discipline.Size = new System.Drawing.Size(341, 615);
+            this.listBox_Discipline.TabIndex = 21;
+            this.listBox_Discipline.SelectedIndexChanged += new System.EventHandler(this.listBox_Discipline_SelectedIndexChanged);
             // 
-            // button_Delete
+            // btn_Add
             // 
-            this.button_Delete.Location = new System.Drawing.Point(12, 607);
-            this.button_Delete.Name = "button_Delete";
-            this.button_Delete.Size = new System.Drawing.Size(125, 23);
-            this.button_Delete.TabIndex = 20;
-            this.button_Delete.Text = "Удалить выбранные";
-            this.button_Delete.UseVisualStyleBackColor = true;
-            this.button_Delete.Click += new System.EventHandler(this.button_Delete_Click);
+            this.btn_Add.Location = new System.Drawing.Point(519, 386);
+            this.btn_Add.Name = "btn_Add";
+            this.btn_Add.Size = new System.Drawing.Size(139, 23);
+            this.btn_Add.TabIndex = 22;
+            this.btn_Add.Text = "Добавить";
+            this.btn_Add.UseVisualStyleBackColor = true;
+            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
+            // 
+            // btn_Save
+            // 
+            this.btn_Save.Location = new System.Drawing.Point(519, 429);
+            this.btn_Save.Name = "btn_Save";
+            this.btn_Save.Size = new System.Drawing.Size(139, 23);
+            this.btn_Save.TabIndex = 23;
+            this.btn_Save.Text = "Сохранить";
+            this.btn_Save.UseVisualStyleBackColor = true;
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
+            // 
+            // comboBox_TeachersName
+            // 
+            this.comboBox_TeachersName.FormattingEnabled = true;
+            this.comboBox_TeachersName.Items.AddRange(new object[] {
+            "Беднякова Татьяна Михайловна",
+            "Савватеева Татьяна Петровна",
+            "Махалкина Татьяна Олеговна"});
+            this.comboBox_TeachersName.Location = new System.Drawing.Point(388, 348);
+            this.comboBox_TeachersName.Name = "comboBox_TeachersName";
+            this.comboBox_TeachersName.Size = new System.Drawing.Size(392, 21);
+            this.comboBox_TeachersName.TabIndex = 24;
+            // 
+            // btn_delete
+            // 
+            this.btn_delete.Location = new System.Drawing.Point(519, 458);
+            this.btn_delete.Name = "btn_delete";
+            this.btn_delete.Size = new System.Drawing.Size(125, 23);
+            this.btn_delete.TabIndex = 25;
+            this.btn_delete.Text = "Удалить";
+            this.btn_delete.UseVisualStyleBackColor = true;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
+            // 
+            // textBox_TeachersName
+            // 
+            this.textBox_TeachersName.Location = new System.Drawing.Point(383, 96);
+            this.textBox_TeachersName.Multiline = true;
+            this.textBox_TeachersName.Name = "textBox_TeachersName";
+            this.textBox_TeachersName.Size = new System.Drawing.Size(392, 20);
+            this.textBox_TeachersName.TabIndex = 26;
             // 
             // F_DisciplineList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 645);
-            this.Controls.Add(this.button_Delete);
-            this.Controls.Add(this.checkedListBox);
+            this.Controls.Add(this.textBox_TeachersName);
+            this.Controls.Add(this.btn_delete);
+            this.Controls.Add(this.comboBox_TeachersName);
+            this.Controls.Add(this.btn_Save);
+            this.Controls.Add(this.btn_Add);
+            this.Controls.Add(this.listBox_Discipline);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -240,11 +253,8 @@
             this.Controls.Add(this.numericUpDown_AcademicHours);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.numericUpDown_ZET);
-            this.Controls.Add(this.button_SaveZET);
-            this.Controls.Add(this.comboBox_teachers);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox_DisciplineName);
-            this.Controls.Add(this.button_DisciplineAdd);
             this.Controls.Add(this.label_Disc_Name);
             this.Name = "F_DisciplineList";
             this.Text = "Список дисциплин";
@@ -261,11 +271,8 @@
 
         #endregion
         private System.Windows.Forms.Label label_Disc_Name;
-        private System.Windows.Forms.Button button_DisciplineAdd;
         private System.Windows.Forms.TextBox textBox_DisciplineName;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox_teachers;
-        private System.Windows.Forms.Button button_SaveZET;
         private System.Windows.Forms.NumericUpDown numericUpDown_ZET;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown numericUpDown_AcademicHours;
@@ -277,7 +284,11 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.CheckedListBox checkedListBox;
-        private System.Windows.Forms.Button button_Delete;
+        private System.Windows.Forms.ListBox listBox_Discipline;
+        private System.Windows.Forms.Button btn_Add;
+        private System.Windows.Forms.Button btn_Save;
+        private System.Windows.Forms.ComboBox comboBox_TeachersName;
+        private System.Windows.Forms.Button btn_delete;
+        private System.Windows.Forms.TextBox textBox_TeachersName;
     }
 }

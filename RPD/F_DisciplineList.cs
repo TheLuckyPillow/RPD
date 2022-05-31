@@ -16,6 +16,7 @@ namespace RPD_1
         private List<Discipline> lst = new List<Discipline>(); //Список объектов класса дисциплин
 
 
+
         public F_DisciplineList()
         {
             InitializeComponent();
@@ -23,75 +24,55 @@ namespace RPD_1
 
         private void ListDisciplines_Load(object sender, EventArgs e)
         {
-            lst = ser.Deserialize(); //записываем в список объектов Discipline все что уже есть в файле
 
-            foreach (Discipline disc in lst)
-            {
-                checkedListBox.Items.Add(disc.nameDiscipline);
-            } // заполняем листбоксы
+            lst = ser.Deserialize_List_discipline(); //загрузка списка дисциплин из файла ""save_discipline.json"
+            listBox_Discipline.DataSource = lst;
         }
 
 
-        private void button_DisciplineAdd_Click(object sender, EventArgs e)
+        private void btn_Add_Click(object sender, EventArgs e)
         {
-            //if(lst.Exists(x => x.nameDiscipline == textBox_DisciplineName.Text))
 
-            Discipline d = new Discipline(textBox_DisciplineName.Text, comboBox_teachers.Text);
-            ser.Serialize(d);
-            lst.Add(d);
-            checkedListBox.Items.Add(d.nameDiscipline);
-        } // добвление новой дисциплины с названиемм и преподавателем за ней
 
-        private void button_SaveZET_Click(object sender, EventArgs e)
+
+
+            lst.Add(new Discipline(textBox_DisciplineName.Text, comboBox_TeachersName.Text));
+
+
+
+            listBox_Discipline.ClearSelected();
+            ser.Serialize_list_discipline(lst); //перезапись файла сохранения с новыми пар-рами
+            listBox_Discipline.DataSource = null; //обновление listbox
+            listBox_Discipline.DataSource = lst;
+        }
+
+        private void btn_Save_Click(object sender, EventArgs e)
         {
-            lst[checkedListBox.SelectedIndex].zet = Convert.ToInt32(numericUpDown_ZET.Value);
-            lst[checkedListBox.SelectedIndex].academicHours = Convert.ToInt32(numericUpDown_AcademicHours.Value);
-            lst[checkedListBox.SelectedIndex].lectionsHours = Convert.ToInt32(numericUpDown_LectionsHours.Value);
-            lst[checkedListBox.SelectedIndex].seminarsHours = Convert.ToInt32(numericUpDown_SeminarsHours.Value);
-            lst[checkedListBox.SelectedIndex].homeworkHours = Convert.ToInt32(numericUpDown_HomeworkHours.Value);
-            
-            ser.Update(lst);
-        } //сохраняем значение академических часов в выбранной дисциплине
+            lst[listBox_Discipline.SelectedIndex].disciplineName = textBox_DisciplineName.Text;
+            lst[listBox_Discipline.SelectedIndex].teachersName = comboBox_TeachersName.Text; //изменение в списке характеристик из TextBox'а
 
-        private void checkedListBox_SelectedIndexChanged(object sender, EventArgs e)
+            listBox_Discipline.ClearSelected();
+            ser.Serialize_list_discipline(lst);//перезапись файла сохранения с новыми пар-рами
+            listBox_Discipline.DataSource = null; //обновление listbox
+            listBox_Discipline.DataSource = lst;
+        }
+
+        private void btn_delete_Click(object sender, EventArgs e)
         {
-            if(checkedListBox.SelectedIndex > 0)
+
+            listBox_Discipline.ClearSelected();
+            ser.Serialize_list_discipline(lst);//перезапись файла сохранения с новыми пар-рами
+            listBox_Discipline.DataSource = null; //обновление listbox
+            listBox_Discipline.DataSource = lst;
+        }
+
+        private void listBox_Discipline_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listBox_Discipline.SelectedIndex != -1)
             {
-                numericUpDown_ZET.Value = lst[checkedListBox.SelectedIndex].zet;
-                numericUpDown_AcademicHours.Value = lst[checkedListBox.SelectedIndex].academicHours;
-                numericUpDown_LectionsHours.Value = lst[checkedListBox.SelectedIndex].lectionsHours;
-                numericUpDown_SeminarsHours.Value = lst[checkedListBox.SelectedIndex].seminarsHours;
-                numericUpDown_HomeworkHours.Value = lst[checkedListBox.SelectedIndex].homeworkHours;
-            }
-
-        } //заполняем поля относительно выбранной дисциплины в listbox
-
-        private void button_Delete_Click(object sender, EventArgs e)
-        {
-            checkedListBox.ClearSelected();
-
-            Stack<int> stack = new Stack<int>(); //индексы которые нужно удалить
-
-            //List<int> deleted_indexes_tmp = new List<int>();
-            for (int i = checkedListBox.Items.Count - 1; i >= 0; i--)
-            {
-                if (checkedListBox.GetItemChecked(i))
-                {
-                    checkedListBox.Items.RemoveAt(i);
-                    stack.Push(i);
-                }
-            }
-
-            var deleted_indexes_tmp = new Stack<int>(stack);
-
-            while (deleted_indexes_tmp.Count > 0)
-            {
-
-                lst.RemoveAt(deleted_indexes_tmp.Pop());
-            }
-
-            ser.Update(lst);
-
-        }// удаляем выбранные дисциплины
+                textBox_DisciplineName.Text = lst[listBox_Discipline.SelectedIndex].disciplineName;
+                comboBox_TeachersName.Text = lst[listBox_Discipline.SelectedIndex].teachersName;
+            } //Если элемент не выделен, срабатывает SelectedIndexChanged, пытаясь использовать элемент, который не выделен
+        }
     }
 }

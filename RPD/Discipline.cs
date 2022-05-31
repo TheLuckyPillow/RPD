@@ -9,20 +9,25 @@ namespace RPD_1
 {
     class Discipline
     {
-        public Discipline(string nameDiscipline, string teacher)
+        public Discipline(string nameDiscipline, string teachersName)
         {
-            this.nameDiscipline = nameDiscipline;
-            this.teacher = teacher;
+            this.disciplineName = nameDiscipline;
+            this.teachersName = teachersName;
         }
 
-        public String nameDiscipline { get; set; }
-        public String teacher { get; set; }
-        public int zet { get; set; }
-        public int academicHours { get; set; }
-        public int lectionsHours { get; set; }
-        public int seminarsHours { get; set; }
-        public int homeworkHours { get; set; }
+        public String disciplineName { get; set; }
+        public String teachersName { get; set; }
+        //public int zet { get; set; }
+        //public int academicHours { get; set; }
+        //public int lectionsHours { get; set; }
+        //public int seminarsHours { get; set; }
+        //public int homeworkHours { get; set; }
 
+
+        public override String ToString()
+        {
+            return this.disciplineName;
+        }
 
     }
 }
