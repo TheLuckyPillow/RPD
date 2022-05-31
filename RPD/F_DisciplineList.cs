@@ -25,21 +25,14 @@ namespace RPD_1
         private void ListDisciplines_Load(object sender, EventArgs e)
         {
 
-            lst = ser.Deserialize_List_discipline(); //загрузка списка дисциплин из файла ""save_discipline.json"
-            listBox_Discipline.DataSource = lst;
+            //lst = ser.Deserialize_List_discipline(); //загрузка списка дисциплин из файла ""save_discipline.json"
+            //listBox_Discipline.DataSource = lst;
         }
 
 
         private void btn_Add_Click(object sender, EventArgs e)
         {
-
-
-
-
             lst.Add(new Discipline(textBox_DisciplineName.Text, comboBox_TeachersName.Text));
-
-
-
             listBox_Discipline.ClearSelected();
             ser.Serialize_list_discipline(lst); //перезапись файла сохранения с новыми пар-рами
             listBox_Discipline.DataSource = null; //обновление listbox

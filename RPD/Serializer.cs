@@ -12,28 +12,44 @@ namespace RPD_1
 {
     class Serializer
     {
-
+        //возвращает список объектов класса Discipline из файла save_discipline.json
         public List<Discipline> Deserialize_List_discipline()
         {
-            using (FileStream fileStream = new FileStream("save_discipline.json", FileMode.Open))
+            try
             {
-                List<Discipline> d_list = JsonSerializer.Deserialize<List<Discipline>>(fileStream);
+                using (FileStream fileStream = new FileStream("save_discipline.json", FileMode.Open))
+                {
+                    List<Discipline> d_list = JsonSerializer.Deserialize<List<Discipline>>(fileStream);
+                    return d_list;
+                }
+            }
+            catch (FileNotFoundException e)
+            {
+                List<Discipline> d_list = null;
                 return d_list;
             }
+        }
 
-
-        } //возвращает список объектов класса Discipline из файла save_discipline.json
-
+        //перезаписывает список объектов класса Discipline в файл save_discipline.json
         public void Serialize_list_discipline(List<Discipline> d)
         {
             string json = JsonSerializer.Serialize(d);
-
-            using (FileStream fileStream = new FileStream("save_discipline.json", FileMode.Truncate))
+            try
             {
-                JsonSerializer.Serialize(fileStream, d);
+                using (FileStream fileStream = new FileStream("save_discipline.json", FileMode.Truncate))
+                {
+                    JsonSerializer.Serialize(fileStream, d);
+                }
             }
-        } //перезаписывает список объектов класса Discipline в файл save_discipline.json
-
+            catch (FileNotFoundException e)
+            {
+                using (FileStream fileStream = new FileStream("save_discipline.json", FileMode.CreateNew))
+                {
+                    JsonSerializer.Serialize(fileStream, d);
+                }
+            }
+        }
+        //возвращает список объектов класса Teachers из файла save_teachers.json
         public List<Teachers> Deserialize_List_teachers()
         {
             using (FileStream fileStream = new FileStream("save_teachers.json", FileMode.Open))
@@ -41,7 +57,7 @@ namespace RPD_1
                 List<Teachers> t_list = JsonSerializer.Deserialize<List<Teachers>>(fileStream);
                 return t_list;
             }
-        } //возвращает список объектов класса Teachers из файла save_teachers.json
+        }
 
         public void Serialize_list_teachers(List<Teachers> t)
         {
