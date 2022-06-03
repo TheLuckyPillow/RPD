@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace RPD_1
+namespace RPD
 {
     public partial class CreateRPD : Form
     {

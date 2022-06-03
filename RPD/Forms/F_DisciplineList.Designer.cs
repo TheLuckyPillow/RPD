@@ -1,4 +1,4 @@
-﻿namespace RPD_1
+﻿namespace RPD
 {
     partial class F_DisciplineList
     {
@@ -47,7 +47,6 @@
             this.btn_Save = new System.Windows.Forms.Button();
             this.comboBox_TeachersName = new System.Windows.Forms.ComboBox();
             this.btn_delete = new System.Windows.Forms.Button();
-            this.textBox_TeachersName = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_ZET)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_AcademicHours)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_LectionsHours)).BeginInit();
@@ -165,9 +164,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(399, 610);
+            this.button2.Location = new System.Drawing.Point(625, 601);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(287, 23);
+            this.button2.Size = new System.Drawing.Size(123, 23);
             this.button2.TabIndex = 18;
             this.button2.Text = "создать шаблон";
             this.button2.UseVisualStyleBackColor = true;
@@ -177,15 +176,15 @@
             this.listBox_Discipline.FormattingEnabled = true;
             this.listBox_Discipline.Location = new System.Drawing.Point(12, 12);
             this.listBox_Discipline.Name = "listBox_Discipline";
-            this.listBox_Discipline.Size = new System.Drawing.Size(341, 615);
+            this.listBox_Discipline.Size = new System.Drawing.Size(341, 550);
             this.listBox_Discipline.TabIndex = 21;
             this.listBox_Discipline.SelectedIndexChanged += new System.EventHandler(this.listBox_Discipline_SelectedIndexChanged);
             // 
             // btn_Add
             // 
-            this.btn_Add.Location = new System.Drawing.Point(519, 386);
+            this.btn_Add.Location = new System.Drawing.Point(228, 568);
             this.btn_Add.Name = "btn_Add";
-            this.btn_Add.Size = new System.Drawing.Size(139, 23);
+            this.btn_Add.Size = new System.Drawing.Size(125, 23);
             this.btn_Add.TabIndex = 22;
             this.btn_Add.Text = "Добавить";
             this.btn_Add.UseVisualStyleBackColor = true;
@@ -193,9 +192,9 @@
             // 
             // btn_Save
             // 
-            this.btn_Save.Location = new System.Drawing.Point(519, 429);
+            this.btn_Save.Location = new System.Drawing.Point(383, 117);
             this.btn_Save.Name = "btn_Save";
-            this.btn_Save.Size = new System.Drawing.Size(139, 23);
+            this.btn_Save.Size = new System.Drawing.Size(125, 23);
             this.btn_Save.TabIndex = 23;
             this.btn_Save.Text = "Сохранить";
             this.btn_Save.UseVisualStyleBackColor = true;
@@ -208,14 +207,14 @@
             "Беднякова Татьяна Михайловна",
             "Савватеева Татьяна Петровна",
             "Махалкина Татьяна Олеговна"});
-            this.comboBox_TeachersName.Location = new System.Drawing.Point(388, 348);
+            this.comboBox_TeachersName.Location = new System.Drawing.Point(383, 87);
             this.comboBox_TeachersName.Name = "comboBox_TeachersName";
             this.comboBox_TeachersName.Size = new System.Drawing.Size(392, 21);
             this.comboBox_TeachersName.TabIndex = 24;
             // 
             // btn_delete
             // 
-            this.btn_delete.Location = new System.Drawing.Point(519, 458);
+            this.btn_delete.Location = new System.Drawing.Point(12, 568);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(125, 23);
             this.btn_delete.TabIndex = 25;
@@ -223,20 +222,11 @@
             this.btn_delete.UseVisualStyleBackColor = true;
             this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
-            // textBox_TeachersName
-            // 
-            this.textBox_TeachersName.Location = new System.Drawing.Point(383, 96);
-            this.textBox_TeachersName.Multiline = true;
-            this.textBox_TeachersName.Name = "textBox_TeachersName";
-            this.textBox_TeachersName.Size = new System.Drawing.Size(392, 20);
-            this.textBox_TeachersName.TabIndex = 26;
-            // 
             // F_DisciplineList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 645);
-            this.Controls.Add(this.textBox_TeachersName);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.comboBox_TeachersName);
             this.Controls.Add(this.btn_Save);
@@ -289,6 +279,5 @@
         private System.Windows.Forms.Button btn_Save;
         private System.Windows.Forms.ComboBox comboBox_TeachersName;
         private System.Windows.Forms.Button btn_delete;
-        private System.Windows.Forms.TextBox textBox_TeachersName;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RPD.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,8 @@ using System.IO;
 
 using System.Windows.Forms;
 
-namespace RPD_1
+
+namespace RPD
 {
     class Serializer
     {
@@ -49,6 +51,7 @@ namespace RPD_1
                 }
             }
         }
+
         //возвращает список объектов класса Teachers из файла save_teachers.json
         public List<Teachers> Deserialize_List_teachers()
         {
@@ -59,6 +62,7 @@ namespace RPD_1
             }
         }
 
+        //перезаписывает список объектов класса Teachers в файл save_teachers.json
         public void Serialize_list_teachers(List<Teachers> t)
         {
             string json = JsonSerializer.Serialize(t);
@@ -67,29 +71,44 @@ namespace RPD_1
             {
                 JsonSerializer.Serialize(fileStream, t);
             }
-        } //перезаписывает список объектов класса Teachers в файл save_teachers.json
+        }
 
-        //public void Update(List<Discipline> lst)
-        //{
-        //    using (FileStream fileStream = new FileStream("save.json", FileMode.Open, FileAccess.ReadWrite))
-        //    {
-        //        fileStream.SetLength(0);
-        //    } //очистка файла "save"
-        //    foreach (Discipline d in lst)
-        //    {
-        //        Serialize(d);
-        //    } // запись в файл обновлненных значений из списка
-        //}
-        //public void Update(List<Teachers> lst)
-        //{
-        //    using (FileStream fileStream = new FileStream("save_teachers.json", FileMode.Open, FileAccess.ReadWrite))
-        //    {
-        //        fileStream.SetLength(0);
-        //    } //очистка файла "save"
-        //    foreach (Discipline d in lst)
-        //    {
-        //        Serialize(d);
-        //    } // запись в файл обновлненных значений из списка
-        //}
+        public List<Competence> Deserialize_List_competence()
+        {
+            try
+            {
+                using (FileStream fileStream = new FileStream("save_competence.json", FileMode.Open))
+                {
+                    List<Competence> c_list = JsonSerializer.Deserialize<List<Competence>>(fileStream);
+                    return c_list;
+                }
+            }
+            catch (FileNotFoundException e)
+            {
+                List<Competence> c_list = null;
+                return c_list;
+            }
+        }
+
+        //перезаписывает список объектов класса Teachers в файл save_teachers.json
+        public void Serialize_list_competence(List<Competence> c)
+        {
+            string json = JsonSerializer.Serialize(c);
+            try
+            {
+                using (FileStream fileStream = new FileStream("save_competence.json", FileMode.Truncate))
+                {
+                    JsonSerializer.Serialize(fileStream, c);
+                }
+            }
+            catch (FileNotFoundException e)
+            {
+                using (FileStream fileStream = new FileStream("save_competence.json", FileMode.CreateNew))
+                {
+                    JsonSerializer.Serialize(fileStream, c);
+                }
+            }
+        }
+
     }
 }

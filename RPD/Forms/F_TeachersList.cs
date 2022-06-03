@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RPD.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace RPD_1
+namespace RPD
 {
     public partial class F_TeachersList : Form
     {

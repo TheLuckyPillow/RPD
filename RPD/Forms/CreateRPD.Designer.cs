@@ -1,4 +1,4 @@
-﻿namespace RPD_1
+﻿namespace RPD
 {
     partial class CreateRPD
     {

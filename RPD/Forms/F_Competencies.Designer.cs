@@ -1,4 +1,4 @@
-﻿namespace RPD_1
+﻿namespace RPD
 {
     partial class F_Competencies
     {
@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.listBox3 = new System.Windows.Forms.ListBox();
-            this.listBox4 = new System.Windows.Forms.ListBox();
-            this.listBox5 = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.listBox_Competencies = new System.Windows.Forms.ListBox();
+            this.listBox_Indicators = new System.Windows.Forms.ListBox();
+            this.listBox_Knowledge = new System.Windows.Forms.ListBox();
+            this.listBox_Skills = new System.Windows.Forms.ListBox();
+            this.listBox_Ownerships = new System.Windows.Forms.ListBox();
+            this.btn_AddCompetencies = new System.Windows.Forms.Button();
+            this.btn_DeleteCompetencies = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,87 +46,88 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
+            this.btn_AddIndicators = new System.Windows.Forms.Button();
+            this.btn_DeleteIndicators = new System.Windows.Forms.Button();
+            this.btn_AddKnowledge = new System.Windows.Forms.Button();
+            this.btn_DeleteKnowledge = new System.Windows.Forms.Button();
+            this.btn_AddSkills = new System.Windows.Forms.Button();
+            this.btn_DeleteSkills = new System.Windows.Forms.Button();
+            this.btn_DeleteOwnerships = new System.Windows.Forms.Button();
+            this.btn_AddOwnerships = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // listBox1
+            // listBox_Competencies
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Items.AddRange(new object[] {
+            this.listBox_Competencies.FormattingEnabled = true;
+            this.listBox_Competencies.Items.AddRange(new object[] {
             "УК-3.",
             "ПК-3."});
-            this.listBox1.Location = new System.Drawing.Point(12, 59);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.listBox1.Size = new System.Drawing.Size(68, 316);
-            this.listBox1.TabIndex = 0;
+            this.listBox_Competencies.Location = new System.Drawing.Point(12, 59);
+            this.listBox_Competencies.Name = "listBox_Competencies";
+            this.listBox_Competencies.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.listBox_Competencies.Size = new System.Drawing.Size(68, 316);
+            this.listBox_Competencies.TabIndex = 0;
             // 
-            // listBox2
+            // listBox_Indicators
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Items.AddRange(new object[] {
+            this.listBox_Indicators.FormattingEnabled = true;
+            this.listBox_Indicators.Items.AddRange(new object[] {
             "И(ПК-3)-1",
             "И(ПК-3)-2",
             "И(ПК-3)-3"});
-            this.listBox2.Location = new System.Drawing.Point(273, 59);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(68, 316);
-            this.listBox2.TabIndex = 1;
+            this.listBox_Indicators.Location = new System.Drawing.Point(273, 59);
+            this.listBox_Indicators.Name = "listBox_Indicators";
+            this.listBox_Indicators.Size = new System.Drawing.Size(68, 316);
+            this.listBox_Indicators.TabIndex = 1;
             // 
-            // listBox3
+            // listBox_Knowledge
             // 
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.Items.AddRange(new object[] {
+            this.listBox_Knowledge.FormattingEnabled = true;
+            this.listBox_Knowledge.Items.AddRange(new object[] {
             "З1 (ПК-3)-3"});
-            this.listBox3.Location = new System.Drawing.Point(641, 59);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(87, 108);
-            this.listBox3.TabIndex = 2;
+            this.listBox_Knowledge.Location = new System.Drawing.Point(641, 59);
+            this.listBox_Knowledge.Name = "listBox_Knowledge";
+            this.listBox_Knowledge.Size = new System.Drawing.Size(87, 108);
+            this.listBox_Knowledge.TabIndex = 2;
             // 
-            // listBox4
+            // listBox_Skills
             // 
-            this.listBox4.FormattingEnabled = true;
-            this.listBox4.Items.AddRange(new object[] {
+            this.listBox_Skills.FormattingEnabled = true;
+            this.listBox_Skills.Items.AddRange(new object[] {
             "У1 (ПК-3)-3"});
-            this.listBox4.Location = new System.Drawing.Point(641, 163);
-            this.listBox4.Name = "listBox4";
-            this.listBox4.Size = new System.Drawing.Size(87, 108);
-            this.listBox4.TabIndex = 3;
+            this.listBox_Skills.Location = new System.Drawing.Point(641, 163);
+            this.listBox_Skills.Name = "listBox_Skills";
+            this.listBox_Skills.Size = new System.Drawing.Size(87, 108);
+            this.listBox_Skills.TabIndex = 3;
             // 
-            // listBox5
+            // listBox_Ownerships
             // 
-            this.listBox5.FormattingEnabled = true;
-            this.listBox5.Items.AddRange(new object[] {
+            this.listBox_Ownerships.FormattingEnabled = true;
+            this.listBox_Ownerships.Items.AddRange(new object[] {
             "В1 (ПК-3)-3"});
-            this.listBox5.Location = new System.Drawing.Point(641, 267);
-            this.listBox5.Name = "listBox5";
-            this.listBox5.Size = new System.Drawing.Size(87, 108);
-            this.listBox5.TabIndex = 4;
+            this.listBox_Ownerships.Location = new System.Drawing.Point(641, 267);
+            this.listBox_Ownerships.Name = "listBox_Ownerships";
+            this.listBox_Ownerships.Size = new System.Drawing.Size(87, 108);
+            this.listBox_Ownerships.TabIndex = 4;
             // 
-            // button1
+            // btn_AddCompetencies
             // 
-            this.button1.Location = new System.Drawing.Point(12, 381);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(68, 33);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Добавить";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_AddCompetencies.Location = new System.Drawing.Point(12, 381);
+            this.btn_AddCompetencies.Name = "btn_AddCompetencies";
+            this.btn_AddCompetencies.Size = new System.Drawing.Size(68, 33);
+            this.btn_AddCompetencies.TabIndex = 5;
+            this.btn_AddCompetencies.Text = "Добавить";
+            this.btn_AddCompetencies.UseVisualStyleBackColor = true;
+            this.btn_AddCompetencies.Click += new System.EventHandler(this.btn_AddCompetencies_Click);
             // 
-            // button2
+            // btn_DeleteCompetencies
             // 
-            this.button2.Location = new System.Drawing.Point(12, 420);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(68, 33);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Удалить";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_DeleteCompetencies.Location = new System.Drawing.Point(12, 420);
+            this.btn_DeleteCompetencies.Name = "btn_DeleteCompetencies";
+            this.btn_DeleteCompetencies.Size = new System.Drawing.Size(68, 33);
+            this.btn_DeleteCompetencies.TabIndex = 6;
+            this.btn_DeleteCompetencies.Text = "Удалить";
+            this.btn_DeleteCompetencies.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -248,91 +249,91 @@
             this.label11.Text = "Владения:";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button4
+            // btn_AddIndicators
             // 
-            this.button4.Location = new System.Drawing.Point(273, 381);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(68, 33);
-            this.button4.TabIndex = 19;
-            this.button4.Text = "Добавить";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btn_AddIndicators.Location = new System.Drawing.Point(273, 381);
+            this.btn_AddIndicators.Name = "btn_AddIndicators";
+            this.btn_AddIndicators.Size = new System.Drawing.Size(68, 33);
+            this.btn_AddIndicators.TabIndex = 19;
+            this.btn_AddIndicators.Text = "Добавить";
+            this.btn_AddIndicators.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btn_DeleteIndicators
             // 
-            this.button5.Location = new System.Drawing.Point(273, 415);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(68, 33);
-            this.button5.TabIndex = 20;
-            this.button5.Text = "Удалить";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btn_DeleteIndicators.Location = new System.Drawing.Point(273, 415);
+            this.btn_DeleteIndicators.Name = "btn_DeleteIndicators";
+            this.btn_DeleteIndicators.Size = new System.Drawing.Size(68, 33);
+            this.btn_DeleteIndicators.TabIndex = 20;
+            this.btn_DeleteIndicators.Text = "Удалить";
+            this.btn_DeleteIndicators.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // btn_AddKnowledge
             // 
-            this.button6.Location = new System.Drawing.Point(552, 87);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(83, 33);
-            this.button6.TabIndex = 21;
-            this.button6.Text = "Добавить";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btn_AddKnowledge.Location = new System.Drawing.Point(552, 87);
+            this.btn_AddKnowledge.Name = "btn_AddKnowledge";
+            this.btn_AddKnowledge.Size = new System.Drawing.Size(83, 33);
+            this.btn_AddKnowledge.TabIndex = 21;
+            this.btn_AddKnowledge.Text = "Добавить";
+            this.btn_AddKnowledge.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // btn_DeleteKnowledge
             // 
-            this.button7.Location = new System.Drawing.Point(552, 126);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(83, 33);
-            this.button7.TabIndex = 22;
-            this.button7.Text = "Удалить";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btn_DeleteKnowledge.Location = new System.Drawing.Point(552, 126);
+            this.btn_DeleteKnowledge.Name = "btn_DeleteKnowledge";
+            this.btn_DeleteKnowledge.Size = new System.Drawing.Size(83, 33);
+            this.btn_DeleteKnowledge.TabIndex = 22;
+            this.btn_DeleteKnowledge.Text = "Удалить";
+            this.btn_DeleteKnowledge.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // btn_AddSkills
             // 
-            this.button8.Location = new System.Drawing.Point(552, 191);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(83, 33);
-            this.button8.TabIndex = 23;
-            this.button8.Text = "Добавить";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btn_AddSkills.Location = new System.Drawing.Point(552, 191);
+            this.btn_AddSkills.Name = "btn_AddSkills";
+            this.btn_AddSkills.Size = new System.Drawing.Size(83, 33);
+            this.btn_AddSkills.TabIndex = 23;
+            this.btn_AddSkills.Text = "Добавить";
+            this.btn_AddSkills.UseVisualStyleBackColor = true;
             // 
-            // button9
+            // btn_DeleteSkills
             // 
-            this.button9.Location = new System.Drawing.Point(552, 230);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(83, 33);
-            this.button9.TabIndex = 24;
-            this.button9.Text = "Удалить";
-            this.button9.UseVisualStyleBackColor = true;
+            this.btn_DeleteSkills.Location = new System.Drawing.Point(552, 230);
+            this.btn_DeleteSkills.Name = "btn_DeleteSkills";
+            this.btn_DeleteSkills.Size = new System.Drawing.Size(83, 33);
+            this.btn_DeleteSkills.TabIndex = 24;
+            this.btn_DeleteSkills.Text = "Удалить";
+            this.btn_DeleteSkills.UseVisualStyleBackColor = true;
             // 
-            // button10
+            // btn_DeleteOwnerships
             // 
-            this.button10.Location = new System.Drawing.Point(552, 342);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(83, 33);
-            this.button10.TabIndex = 25;
-            this.button10.Text = "Удалить";
-            this.button10.UseVisualStyleBackColor = true;
+            this.btn_DeleteOwnerships.Location = new System.Drawing.Point(552, 342);
+            this.btn_DeleteOwnerships.Name = "btn_DeleteOwnerships";
+            this.btn_DeleteOwnerships.Size = new System.Drawing.Size(83, 33);
+            this.btn_DeleteOwnerships.TabIndex = 25;
+            this.btn_DeleteOwnerships.Text = "Удалить";
+            this.btn_DeleteOwnerships.UseVisualStyleBackColor = true;
             // 
-            // button11
+            // btn_AddOwnerships
             // 
-            this.button11.Location = new System.Drawing.Point(552, 305);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(83, 33);
-            this.button11.TabIndex = 26;
-            this.button11.Text = "Добавить";
-            this.button11.UseVisualStyleBackColor = true;
+            this.btn_AddOwnerships.Location = new System.Drawing.Point(552, 305);
+            this.btn_AddOwnerships.Name = "btn_AddOwnerships";
+            this.btn_AddOwnerships.Size = new System.Drawing.Size(83, 33);
+            this.btn_AddOwnerships.TabIndex = 26;
+            this.btn_AddOwnerships.Text = "Добавить";
+            this.btn_AddOwnerships.UseVisualStyleBackColor = true;
             // 
             // F_Competencies
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1367, 503);
-            this.Controls.Add(this.button11);
-            this.Controls.Add(this.button10);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btn_AddOwnerships);
+            this.Controls.Add(this.btn_DeleteOwnerships);
+            this.Controls.Add(this.btn_DeleteSkills);
+            this.Controls.Add(this.btn_AddSkills);
+            this.Controls.Add(this.btn_DeleteKnowledge);
+            this.Controls.Add(this.btn_AddKnowledge);
+            this.Controls.Add(this.btn_DeleteIndicators);
+            this.Controls.Add(this.btn_AddIndicators);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -344,28 +345,29 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.listBox5);
-            this.Controls.Add(this.listBox4);
-            this.Controls.Add(this.listBox3);
-            this.Controls.Add(this.listBox2);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.btn_DeleteCompetencies);
+            this.Controls.Add(this.btn_AddCompetencies);
+            this.Controls.Add(this.listBox_Ownerships);
+            this.Controls.Add(this.listBox_Skills);
+            this.Controls.Add(this.listBox_Knowledge);
+            this.Controls.Add(this.listBox_Indicators);
+            this.Controls.Add(this.listBox_Competencies);
             this.Name = "F_Competencies";
             this.Text = "Общий список компетенций";
+            this.Load += new System.EventHandler(this.F_Competencies_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.ListBox listBox3;
-        private System.Windows.Forms.ListBox listBox4;
-        private System.Windows.Forms.ListBox listBox5;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ListBox listBox_Competencies;
+        private System.Windows.Forms.ListBox listBox_Indicators;
+        private System.Windows.Forms.ListBox listBox_Knowledge;
+        private System.Windows.Forms.ListBox listBox_Skills;
+        private System.Windows.Forms.ListBox listBox_Ownerships;
+        private System.Windows.Forms.Button btn_AddCompetencies;
+        private System.Windows.Forms.Button btn_DeleteCompetencies;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -377,13 +379,13 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button btn_AddIndicators;
+        private System.Windows.Forms.Button btn_DeleteIndicators;
+        private System.Windows.Forms.Button btn_AddKnowledge;
+        private System.Windows.Forms.Button btn_DeleteKnowledge;
+        private System.Windows.Forms.Button btn_AddSkills;
+        private System.Windows.Forms.Button btn_DeleteSkills;
+        private System.Windows.Forms.Button btn_DeleteOwnerships;
+        private System.Windows.Forms.Button btn_AddOwnerships;
     }
 }
