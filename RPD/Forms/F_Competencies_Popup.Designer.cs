@@ -45,16 +45,16 @@ namespace RPD.Forms
             // 
             // textBox_Discription
             // 
-            this.textBox_Discription.Location = new System.Drawing.Point(12, 64);
+            this.textBox_Discription.Location = new System.Drawing.Point(15, 64);
             this.textBox_Discription.Multiline = true;
             this.textBox_Discription.Name = "textBox_Discription";
-            this.textBox_Discription.Size = new System.Drawing.Size(308, 90);
+            this.textBox_Discription.Size = new System.Drawing.Size(300, 100);
             this.textBox_Discription.TabIndex = 1;
-            this.textBox_Discription.TextChanged += new System.EventHandler(this.textBox_Discription_TextChanged);
+            this.textBox_Discription.Click += new System.EventHandler(this.textBox_Discription_Click);
             // 
             // btn_Add
             // 
-            this.btn_Add.Location = new System.Drawing.Point(53, 194);
+            this.btn_Add.Location = new System.Drawing.Point(63, 176);
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Size = new System.Drawing.Size(75, 23);
             this.btn_Add.TabIndex = 2;
@@ -73,7 +73,7 @@ namespace RPD.Forms
             // 
             // btn_Cancel
             // 
-            this.btn_Cancel.Location = new System.Drawing.Point(164, 194);
+            this.btn_Cancel.Location = new System.Drawing.Point(186, 176);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(75, 23);
             this.btn_Cancel.TabIndex = 4;
@@ -85,14 +85,14 @@ namespace RPD.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(332, 229);
+            this.ClientSize = new System.Drawing.Size(334, 211);
             this.Controls.Add(this.btn_Cancel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_Add);
             this.Controls.Add(this.textBox_Discription);
             this.Controls.Add(this.textBox_codeKey);
             this.Name = "F_Competencies_Popup";
-            this.Text = "F_Competencies_Popup";
+            this.Text = "Добавить компетенцию";
             this.Load += new System.EventHandler(this.F_Competencies_Popup_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

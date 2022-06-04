@@ -21,5 +21,10 @@ namespace RPD
         {
 
         }
+
+        private void CreateRPD_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

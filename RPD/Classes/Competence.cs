@@ -19,6 +19,7 @@ namespace RPD.Classes
         public int codeNumber;
 
         public string discription;
+        //public List<Indicator> indicators;
 
 
 

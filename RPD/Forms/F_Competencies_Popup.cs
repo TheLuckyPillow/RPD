@@ -16,17 +16,12 @@ namespace RPD.Forms
         {
             InitializeComponent();
         }
+        public string discription;
 
         private void F_Competencies_Popup_Load(object sender, EventArgs e)
         {
             textBox_Discription.Text = "Введите содержание компетенции";
             textBox_Discription.ForeColor = Color.Gray;
-        }
-
-        private void textBox_Discription_TextChanged(object sender, EventArgs e)
-        {
-            textBox_Discription.Clear();
-            textBox_Discription.ForeColor = Color.Black;
         }
 
         private void btn_Cancel_Click(object sender, EventArgs e)
@@ -36,7 +31,14 @@ namespace RPD.Forms
 
         private void btn_Add_Click(object sender, EventArgs e)
         {
+            this.discription = textBox_Discription.Text;
             this.DialogResult = DialogResult.OK;
+        }
+
+        private void textBox_Discription_Click(object sender, EventArgs e)
+       {
+            textBox_Discription.Clear();
+            textBox_Discription.ForeColor = Color.Black;
         }
     }
 }

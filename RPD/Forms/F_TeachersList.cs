@@ -40,6 +40,7 @@ namespace RPD
 
         private void btn_Save_Click(object sender, EventArgs e)
         {
+
             lst[listBox1.SelectedIndex].fIO = textBox_FIO.Text;
             lst[listBox1.SelectedIndex].mail = textBox_Mail.Text; //изменение в списке характеристик из TextBox'а
 
@@ -61,11 +62,7 @@ namespace RPD
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (listBox1.SelectedIndex != -1)
-            {
-                textBox_Mail.Text = lst[listBox1.SelectedIndex].mail;
-                textBox_FIO.Text = lst[listBox1.SelectedIndex].fIO;
-            } //Если элемент не выделен, срабатывает SelectedIndexChanged, пытаясь использовать элемент, который не выделен
+
         }
     }
 }

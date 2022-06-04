@@ -27,7 +27,7 @@ namespace RPD
             }
             catch (FileNotFoundException e)
             {
-                List<Discipline> d_list = null;
+                List<Discipline> d_list = new List<Discipline>();
                 return d_list;
             }
         }
@@ -55,9 +55,17 @@ namespace RPD
         //возвращает список объектов класса Teachers из файла save_teachers.json
         public List<Teachers> Deserialize_List_teachers()
         {
-            using (FileStream fileStream = new FileStream("save_teachers.json", FileMode.Open))
+            try
             {
-                List<Teachers> t_list = JsonSerializer.Deserialize<List<Teachers>>(fileStream);
+                using (FileStream fileStream = new FileStream("save_teachers.json", FileMode.Open))
+                {
+                    List<Teachers> t_list = JsonSerializer.Deserialize<List<Teachers>>(fileStream);
+                    return t_list;
+                }
+            }
+            catch (FileNotFoundException e)
+            {
+                List<Teachers> t_list = new List<Teachers>();
                 return t_list;
             }
         }
@@ -66,10 +74,19 @@ namespace RPD
         public void Serialize_list_teachers(List<Teachers> t)
         {
             string json = JsonSerializer.Serialize(t);
-
-            using (FileStream fileStream = new FileStream("save_teachers.json", FileMode.Truncate))
+            try
             {
-                JsonSerializer.Serialize(fileStream, t);
+                using (FileStream fileStream = new FileStream("save_teachers.json", FileMode.Truncate))
+                {
+                    JsonSerializer.Serialize(fileStream, t);
+                }
+            }
+            catch (FileNotFoundException)
+            {
+                using (FileStream fileStream = new FileStream("save_teachers.json", FileMode.CreateNew))
+                {
+                    JsonSerializer.Serialize(fileStream, t);
+                }
             }
         }
 

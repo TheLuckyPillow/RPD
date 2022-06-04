@@ -34,8 +34,12 @@ namespace RPD
         private void btn_AddCompetencies_Click(object sender, EventArgs e)
         {
             f_Competencies_Popup = new F_Competencies_Popup();
-            f_Competencies_Popup.ShowDialog();
             
+            
+            if (f_Competencies_Popup.ShowDialog() == DialogResult.OK)
+            {
+                label9.Text = f_Competencies_Popup.discription;
+            }
         }
     }
 

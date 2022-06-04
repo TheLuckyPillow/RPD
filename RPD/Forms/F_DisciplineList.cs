@@ -1,4 +1,5 @@
 ﻿using RPD.Classes;
+using RPD.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,9 +15,9 @@ namespace RPD
     public partial class F_DisciplineList : Form
     {
         private Serializer ser = new Serializer(); //объект класса Serialize для работы с файлом "Save"
-        private List<Discipline> lst = new List<Discipline>(); //Список объектов класса дисциплин
-
-
+        private List<Discipline> lst;
+        //= new List<Discipline>(); //Список объектов класса дисциплин
+      
 
         public F_DisciplineList()
         {
@@ -25,23 +26,32 @@ namespace RPD
 
         private void ListDisciplines_Load(object sender, EventArgs e)
         {
-
+            
             lst = ser.Deserialize_List_discipline(); //загрузка списка дисциплин из файла ""save_discipline.json"
+            listBox_Discipline.ClearSelected();
             listBox_Discipline.DataSource = lst;
+            // TODO список преподавателей из файла
+
         }
 
-
+        
         private void btn_Add_Click(object sender, EventArgs e)
         {
-            lst.Add(new Discipline(textBox_DisciplineName.Text, comboBox_TeachersName.Text));
-            listBox_Discipline.ClearSelected();
-            ser.Serialize_list_discipline(lst); //перезапись файла сохранения с новыми пар-рами
-            listBox_Discipline.DataSource = null; //обновление listbox
-            listBox_Discipline.DataSource = lst;
+            F_DisciplineList_Popup f_DisciplineList_Popup = new F_DisciplineList_Popup();
+
+            if (f_DisciplineList_Popup.ShowDialog() == DialogResult.OK)
+            {
+                lst.Add(new Discipline(f_DisciplineList_Popup.disciplineName, f_DisciplineList_Popup.teacherName));
+                listBox_Discipline.ClearSelected();
+                ser.Serialize_list_discipline(lst); //перезапись файла сохранения с новыми пар-рами
+                listBox_Discipline.DataSource = null; //обновление listbox
+                listBox_Discipline.DataSource = lst;
+            }
         }
 
         private void btn_Save_Click(object sender, EventArgs e)
         {
+            groupBox1.Visible = false;
             lst[listBox_Discipline.SelectedIndex].disciplineName = textBox_DisciplineName.Text;
             lst[listBox_Discipline.SelectedIndex].teachersName = comboBox_TeachersName.Text; //изменение полей дисциплин из TextBox'а
             
@@ -70,8 +80,10 @@ namespace RPD
 
         private void listBox_Discipline_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
             if (listBox_Discipline.SelectedIndex != -1)
             {
+                groupBox1.Visible = true;
                 textBox_DisciplineName.Text = lst[listBox_Discipline.SelectedIndex].disciplineName;
                 comboBox_TeachersName.Text = lst[listBox_Discipline.SelectedIndex].teachersName;
 
@@ -82,6 +94,57 @@ namespace RPD
                 numericUpDown_HomeworkHours.Value = lst[listBox_Discipline.SelectedIndex].homeworkHours;
 
             } //Если элемент не выделен, срабатывает SelectedIndexChanged, пытаясь использовать элемент, который не выделен
+        }
+
+        private void numericUpDown_ZET_ValueChanged(object sender, EventArgs e)
+        {
+            numericUpDown_AcademicHours.Value = numericUpDown_ZET.Value * 36; // завести константу и хранить в файле 
+        }
+
+        private void numericUpDown_LectionsHours_ValueChanged(object sender, EventArgs e)
+        {
+            if (!check())
+            {
+                ((NumericUpDown)sender).BackColor = Color.Red;
+                label7.Text = "Рекомендуемое значение: " + (numericUpDown_AcademicHours.Value - numericUpDown_SeminarsHours.Value - numericUpDown_HomeworkHours.Value);
+            }
+        }
+
+        private void numericUpDown_SeminarsHours_ValueChanged(object sender, EventArgs e)
+        {
+            // TODO numeric проверка
+        }
+
+        private void numericUpDown_HomeworkHours_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+        private bool check()
+        {
+            if (numericUpDown_AcademicHours.Value != numericUpDown_ZET.Value * 36)
+            {
+                // 
+                return false;
+            }
+            else if (numericUpDown_LectionsHours.Value + numericUpDown_SeminarsHours.Value + numericUpDown_HomeworkHours.Value != numericUpDown_AcademicHours.Value)
+            {
+                // 
+                return false;
+            }
+            else 
+            {
+                return true;
+            }
+        }
+
+        private void numericUpDown_AcademicHours_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -114,6 +114,7 @@
             this.Controls.Add(this.label1);
             this.Name = "CreateRPD";
             this.Text = "CreateRPD";
+            this.Load += new System.EventHandler(this.CreateRPD_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

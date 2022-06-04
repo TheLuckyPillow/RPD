@@ -114,6 +114,12 @@
     <Compile Include="Forms\F_Competencies_Popup.Designer.cs">
       <DependentUpon>F_Competencies_Popup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\F_DisciplineList_Popup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\F_DisciplineList_Popup.Designer.cs">
+      <DependentUpon>F_DisciplineList_Popup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\F_Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\F_Competencies_Popup.resx">
       <DependentUpon>F_Competencies_Popup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\F_DisciplineList_Popup.resx">
+      <DependentUpon>F_DisciplineList_Popup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\F_Main.resx">
       <DependentUpon>F_Main.cs</DependentUpon>

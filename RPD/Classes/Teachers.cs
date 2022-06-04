@@ -8,6 +8,10 @@ namespace RPD.Classes
 {
     internal class Teachers
     {
+        public Teachers()
+        {
+
+        }
         public Teachers(string fio, string mail)
         {
             fIO = fio;
