@@ -34,12 +34,36 @@ namespace RPD
         private void btn_AddCompetencies_Click(object sender, EventArgs e)
         {
             f_Competencies_Popup = new F_Competencies_Popup();
-            
-            
             if (f_Competencies_Popup.ShowDialog() == DialogResult.OK)
             {
-                label9.Text = f_Competencies_Popup.discription;
+                label1.Text = f_Competencies_Popup.discription;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            List<Competence> competences = new List<Competence>();
+            List<String> indicators1 = new List<string>();
+            indicators1.Add("Анализирует проблемную ситуацию заинтересованных лиц и выявленяет требования к программному обеспечению, продукту, средству, программно-аппаратному комплексу, ИС");
+            indicators1.Add("Разрабатывает требования к программному обеспечению, продукту, средству, программно-аппаратному комплексу, ИС");
+            indicators1.Add("Проектирует программное обеспечение согласно требованиям");
+            competences.Add(new Competence("ПК1", "Способен разрабатывать требования и проектировать программное обеспечение", indicators1));
+            List<String> indicators2 = new List<string>();
+            indicators2.Add("Анализирует проблемную ситуацию заинтересованных лиц и выявленяет требования к программному обеспечению, продукту, средству, программно-аппаратному комплексу, ИС");
+            indicators2.Add("Разрабатывает требования к программному обеспечению, продукту, средству, программно-аппаратному комплексу, ИС");
+            indicators2.Add("Проектирует программное обеспечение согласно требованиям");
+            competences.Add(new Competence("ПК2", "Способен осуществлять концептуальное, функциональное и логическое проектирование систем среднего и крупного масштаба и сложности", indicators2));
+            int node_num = 0;
+            foreach (Competence competence in competences)
+            {
+                treeView1.Nodes.Add(competence.discription);
+                foreach (string item in competence.indicators)
+                {
+                    treeView1.Nodes[node_num].Nodes.Add(item);
+                }
+                node_num++;
+            }
+           
         }
     }
 

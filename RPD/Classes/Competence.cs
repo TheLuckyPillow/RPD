@@ -15,17 +15,25 @@ namespace RPD.Classes
             this.discription = discription;
         }
 
+        public Competence(string codeKey, string discription, List<string> indicators)
+        {
+            this.codeKey = codeKey;
+            //this.codeNumber = codeNumber;
+            this.discription = discription;
+            this.indicators = indicators;
+        }
+
         public string codeKey;
         public int codeNumber;
 
         public string discription;
-        //public List<Indicator> indicators;
+        public List<String> indicators;
 
 
 
         public string id;
         public string text;
-        public Dictionary<String, String> indicators;
+       // public Dictionary<String, String> indicators;
         public Dictionary<String, String> knows;
         public Dictionary<String, String> skills;
         public Dictionary<String, String> vladenia;

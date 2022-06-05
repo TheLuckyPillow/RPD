@@ -61,6 +61,7 @@
             this.listBox_Discipline = new System.Windows.Forms.ListBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.listBox4 = new System.Windows.Forms.ListBox();
+            this.treeView1 = new System.Windows.Forms.TreeView();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_ZET)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_AcademicHours)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_LectionsHours)).BeginInit();
@@ -274,7 +275,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(360, 22);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(761, 527);
+            this.groupBox1.Size = new System.Drawing.Size(718, 527);
             this.groupBox1.TabIndex = 26;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
@@ -414,11 +415,19 @@
             this.listBox4.Size = new System.Drawing.Size(120, 95);
             this.listBox4.TabIndex = 29;
             // 
+            // treeView1
+            // 
+            this.treeView1.Location = new System.Drawing.Point(1084, 46);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.Size = new System.Drawing.Size(150, 203);
+            this.treeView1.TabIndex = 30;
+            // 
             // F_DisciplineList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1271, 645);
+            this.Controls.Add(this.treeView1);
             this.Controls.Add(this.listBox4);
             this.Controls.Add(this.listBox2);
             this.Controls.Add(this.listBox_Discipline);
@@ -476,5 +485,6 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.ListBox listBox4;
+        private System.Windows.Forms.TreeView treeView1;
     }
 }
