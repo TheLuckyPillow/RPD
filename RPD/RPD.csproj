@@ -95,6 +95,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Competence.cs" />
+    <Compile Include="Classes\Indicator.cs" />
     <Compile Include="Forms\F_Competencies.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,11 +109,17 @@
       <DependentUpon>CreateRPD.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Discipline.cs" />
-    <Compile Include="Forms\F_Competencies_Popup.cs">
+    <Compile Include="Forms\F_Competencies_Popup_Comp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\F_Competencies_Popup.Designer.cs">
-      <DependentUpon>F_Competencies_Popup.cs</DependentUpon>
+    <Compile Include="Forms\F_Competencies_Popup_Comp.Designer.cs">
+      <DependentUpon>F_Competencies_Popup_Comp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\F_Competencies_Popup_Ind.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\F_Competencies_Popup_Ind.Designer.cs">
+      <DependentUpon>F_Competencies_Popup_Ind.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\F_DisciplineList_Popup.cs">
       <SubType>Form</SubType>
@@ -155,8 +162,11 @@
     <EmbeddedResource Include="Forms\CreateRPD.resx">
       <DependentUpon>CreateRPD.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\F_Competencies_Popup.resx">
-      <DependentUpon>F_Competencies_Popup.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\F_Competencies_Popup_Comp.resx">
+      <DependentUpon>F_Competencies_Popup_Comp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\F_Competencies_Popup_Ind.resx">
+      <DependentUpon>F_Competencies_Popup_Ind.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\F_DisciplineList_Popup.resx">
       <DependentUpon>F_DisciplineList_Popup.cs</DependentUpon>

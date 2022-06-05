@@ -26,12 +26,16 @@ namespace RPD
 
         private void ListDisciplines_Load(object sender, EventArgs e)
         {
-            
+
             lst = ser.Deserialize_List_discipline(); //загрузка списка дисциплин из файла ""save_discipline.json"
             listBox_Discipline.ClearSelected();
             listBox_Discipline.DataSource = lst;
-            // TODO список преподавателей из файла
 
+            List<Teachers> teachers = new List<Teachers>(ser.Deserialize_List_teachers()); //Считывание списка преподавателей для комбобокса в поле редактирование
+            comboBox_TeachersName.DataSource = teachers;
+
+            listBox_Discipline.ClearSelected();
+            groupBox1.Visible = false; //Скрытие панели настроек
         }
 
         
@@ -51,7 +55,6 @@ namespace RPD
 
         private void btn_Save_Click(object sender, EventArgs e)
         {
-            groupBox1.Visible = false;
             lst[listBox_Discipline.SelectedIndex].disciplineName = textBox_DisciplineName.Text;
             lst[listBox_Discipline.SelectedIndex].teachersName = comboBox_TeachersName.Text; //изменение полей дисциплин из TextBox'а
             
@@ -143,6 +146,16 @@ namespace RPD
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
 
         }

@@ -18,17 +18,18 @@ namespace RPD.Forms
             InitializeComponent();
         }
 
-        public string disciplineName, teacherName;
+        public string disciplineName, teacherName; //переменные, которые передаются из Popup в F_DisciplineList
 
 
         private void F_DisciplineList_Popup_Load(object sender, EventArgs e)
         {
             Serializer ser = new Serializer();
-            List<Teachers> teachers = new List<Teachers>(ser.Deserialize_List_teachers());
+            List<Teachers> teachers = new List<Teachers>(ser.Deserialize_List_teachers()); //Считывание списка преподавателей
 
             comboBox_TeacherName.DataSource = teachers;
         }
 
+        //Если нажато ОК
         private void btn_Add_Click(object sender, EventArgs e)
         {
             disciplineName = textBox_DisciplineName.Text;
@@ -36,6 +37,7 @@ namespace RPD.Forms
             this.DialogResult = DialogResult.OK;
         }
 
+        //Если нажато ОТМЕНИТЬ
         private void btn_Cancel_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
