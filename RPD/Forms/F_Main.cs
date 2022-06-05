@@ -49,9 +49,14 @@ namespace RPD
             int count = regexp.Length;
             foreach (XElement itemDataSet in dataSet.Elements("ПланыСтроки"))
             {
-                
-                string disciplineName = itemDataSet.Attribute("Дисциплина").ToString().Remove(0, count).Replace("\"", "");
-                lst.Add(new Discipline(disciplineName));
+                string disciplineName = itemDataSet.Attribute("Дисциплина").Value;
+                int zet = 0;
+                int academicHours = 0;
+                if (itemDataSet.Attribute("ЗЕТфакт")!=null)
+                    zet = Convert.ToInt32(itemDataSet.Attribute("ЗЕТфакт").Value);
+                if(itemDataSet.Attribute("ЧасовПоПлану")!= null)
+                    academicHours = Convert.ToInt32(itemDataSet.Attribute("ЧасовПоПлану").Value);
+                lst.Add(new Discipline(disciplineName, zet, academicHours));
                 //label1.Text += "Дисциплина = " + person.Attribute("Дисциплина") + " || " +
                 //                "ЗЕТфакт = " + person.Attribute("ЗЕТфакт") + " || " +
                 //                "ЧасовПоПлану = " + person.Attribute("ЧасовПоПлану") + " || ";

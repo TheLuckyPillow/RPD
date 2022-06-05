@@ -99,6 +99,11 @@
             // numericUpDown_ZET
             // 
             this.numericUpDown_ZET.Location = new System.Drawing.Point(-1, 176);
+            this.numericUpDown_ZET.Maximum = new decimal(new int[] {
+            400,
+            0,
+            0,
+            0});
             this.numericUpDown_ZET.Name = "numericUpDown_ZET";
             this.numericUpDown_ZET.Size = new System.Drawing.Size(75, 20);
             this.numericUpDown_ZET.TabIndex = 8;
@@ -116,6 +121,11 @@
             // numericUpDown_AcademicHours
             // 
             this.numericUpDown_AcademicHours.Location = new System.Drawing.Point(80, 176);
+            this.numericUpDown_AcademicHours.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.numericUpDown_AcademicHours.Name = "numericUpDown_AcademicHours";
             this.numericUpDown_AcademicHours.Size = new System.Drawing.Size(75, 20);
             this.numericUpDown_AcademicHours.TabIndex = 10;
