@@ -1,8 +1,10 @@
-﻿using System;
+﻿using RPD.Classes;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace RPD
 {
@@ -35,6 +37,27 @@ namespace RPD
         {
             F_Competencies f_Competencies = new F_Competencies();
             f_Competencies.Show();
+        }
+
+        private List<Discipline> lst = new List<Discipline>();
+        private Serializer ser = new Serializer();
+        private void button3_Click(object sender, EventArgs e)
+        {
+            XDocument xdoc = XDocument.Load("test.xml");
+            XElement dataSet = xdoc.Element("Документ");
+            string regexp = "Дисциплина=";
+            int count = regexp.Length;
+            foreach (XElement itemDataSet in dataSet.Elements("ПланыСтроки"))
+            {
+                
+                string disciplineName = itemDataSet.Attribute("Дисциплина").ToString().Remove(0, count).Replace("\"", "");
+                lst.Add(new Discipline(disciplineName));
+                //label1.Text += "Дисциплина = " + person.Attribute("Дисциплина") + " || " +
+                //                "ЗЕТфакт = " + person.Attribute("ЗЕТфакт") + " || " +
+                //                "ЧасовПоПлану = " + person.Attribute("ЧасовПоПлану") + " || ";
+
+            }
+            ser.Serialize_list_discipline(lst); //перезапись файла сохранения с новыми пар-рами
         }
     }
 

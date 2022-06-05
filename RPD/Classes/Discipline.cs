@@ -18,6 +18,11 @@ namespace RPD.Classes
             disciplineName = nameDiscipline;
             this.teachersName = teachersName;
         }
+        public Discipline(string nameDiscipline)
+        {
+            disciplineName = nameDiscipline;
+            this.teachersName = "";
+        }
 
         public string disciplineName { get; set; }
         public string teachersName { get; set; }

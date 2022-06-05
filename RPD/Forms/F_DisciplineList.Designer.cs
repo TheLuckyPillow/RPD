@@ -47,20 +47,20 @@
             this.comboBox_TeachersName = new System.Windows.Forms.ComboBox();
             this.btn_delete = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.label12 = new System.Windows.Forms.Label();
+            this.listBox3 = new System.Windows.Forms.ListBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.listBox_Discipline = new System.Windows.Forms.ListBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.listBox2 = new System.Windows.Forms.ListBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.listBox3 = new System.Windows.Forms.ListBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.listBox4 = new System.Windows.Forms.ListBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_ZET)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_AcademicHours)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_LectionsHours)).BeginInit();
@@ -270,6 +270,88 @@
             this.groupBox1.Text = "groupBox1";
             this.groupBox1.Visible = false;
             // 
+            // label13
+            // 
+            this.label13.Location = new System.Drawing.Point(399, 124);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(100, 49);
+            this.label13.TabIndex = 36;
+            this.label13.Text = "Контроль";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label13.Click += new System.EventHandler(this.label13_Click);
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(402, 176);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(72, 20);
+            this.numericUpDown1.TabIndex = 35;
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(518, 372);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(186, 13);
+            this.label12.TabIndex = 34;
+            this.label12.Text = "Форма промежуточной аттестации";
+            // 
+            // listBox3
+            // 
+            this.listBox3.FormattingEnabled = true;
+            this.listBox3.Items.AddRange(new object[] {
+            "Зачет",
+            "Экзамен",
+            "Диффернецируемый зачет",
+            "Курсовая работа"});
+            this.listBox3.Location = new System.Drawing.Point(511, 394);
+            this.listBox3.Name = "listBox3";
+            this.listBox3.Size = new System.Drawing.Size(120, 95);
+            this.listBox3.TabIndex = 32;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(203, 375);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(31, 13);
+            this.label10.TabIndex = 31;
+            this.label10.Text = "Курс";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(349, 372);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(51, 13);
+            this.label11.TabIndex = 33;
+            this.label11.Text = "Семестр";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(203, 262);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(201, 13);
+            this.label9.TabIndex = 30;
+            this.label9.Text = "Место дисциплины в структуре ОПОП";
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Items.AddRange(new object[] {
+            "к обязательной части образовательной программы",
+            "к части образовательной программы, формируемой участниками образовательных отноше" +
+                "ний, является обязательной дисциплиной (модулем);",
+            "к части образовательной программы, формируемой участниками образовательных отноше" +
+                "ний, к дисциплинам (модулям) по выбору обучающихся;",
+            "к факультативным дисциплинам (модулям)."});
+            this.listBox1.Location = new System.Drawing.Point(206, 278);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(364, 95);
+            this.listBox1.TabIndex = 29;
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(94, 243);
@@ -306,30 +388,6 @@
             this.listBox_Discipline.TabIndex = 27;
             this.listBox_Discipline.SelectedIndexChanged += new System.EventHandler(this.listBox_Discipline_SelectedIndexChanged);
             // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Items.AddRange(new object[] {
-            "к обязательной части образовательной программы",
-            "к части образовательной программы, формируемой участниками образовательных отноше" +
-                "ний, является обязательной дисциплиной (модулем);",
-            "к части образовательной программы, формируемой участниками образовательных отноше" +
-                "ний, к дисциплинам (модулям) по выбору обучающихся;",
-            "к факультативным дисциплинам (модулям)."});
-            this.listBox1.Location = new System.Drawing.Point(206, 278);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(216, 95);
-            this.listBox1.TabIndex = 29;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(203, 262);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(201, 13);
-            this.label9.TabIndex = 30;
-            this.label9.Text = "Место дисциплины в структуре ОПОП";
-            // 
             // listBox2
             // 
             this.listBox2.FormattingEnabled = true;
@@ -338,37 +396,6 @@
             this.listBox2.Size = new System.Drawing.Size(120, 95);
             this.listBox2.TabIndex = 28;
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(203, 375);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(31, 13);
-            this.label10.TabIndex = 31;
-            this.label10.Text = "Курс";
-            // 
-            // listBox3
-            // 
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.Items.AddRange(new object[] {
-            "Зачет",
-            "Экзамен",
-            "Диффернецируемый зачет",
-            "Курсовая работа"});
-            this.listBox3.Location = new System.Drawing.Point(511, 394);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(120, 95);
-            this.listBox3.TabIndex = 32;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(349, 372);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(51, 13);
-            this.label11.TabIndex = 33;
-            this.label11.Text = "Семестр";
-            // 
             // listBox4
             // 
             this.listBox4.FormattingEnabled = true;
@@ -376,33 +403,6 @@
             this.listBox4.Name = "listBox4";
             this.listBox4.Size = new System.Drawing.Size(120, 95);
             this.listBox4.TabIndex = 29;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(518, 372);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(186, 13);
-            this.label12.TabIndex = 34;
-            this.label12.Text = "Форма промежуточной аттестации";
-            // 
-            // label13
-            // 
-            this.label13.Location = new System.Drawing.Point(399, 124);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(100, 49);
-            this.label13.TabIndex = 36;
-            this.label13.Text = "Контроль";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label13.Click += new System.EventHandler(this.label13_Click);
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(402, 176);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(72, 20);
-            this.numericUpDown1.TabIndex = 35;
-            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // F_DisciplineList
             // 
