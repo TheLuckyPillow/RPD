@@ -461,6 +461,41 @@ namespace RPD
 
             listBox_Ownerships.ClearSelected();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //List<Competence> competences = new List<Competence>();
+            //List<String> indicators1 = new List<string>();
+            //indicators1.Add("Анализирует проблемную ситуацию заинтересованных лиц и выявленяет требования к программному обеспечению, продукту, средству, программно-аппаратному комплексу, ИС");
+            //indicators1.Add("Разрабатывает требования к программному обеспечению, продукту, средству, программно-аппаратному комплексу, ИС");
+            //indicators1.Add("Проектирует программное обеспечение согласно требованиям");
+            //competences.Add(new Competence("ПК1", "Способен разрабатывать требования и проектировать программное обеспечение", indicators1));
+            //List<String> indicators2 = new List<string>();
+            //indicators2.Add("Анализирует проблемную ситуацию заинтересованных лиц и выявленяет требования к программному обеспечению, продукту, средству, программно-аппаратному комплексу, ИС");
+            //indicators2.Add("Разрабатывает требования к программному обеспечению, продукту, средству, программно-аппаратному комплексу, ИС");
+            //indicators2.Add("Проектирует программное обеспечение согласно требованиям");
+            //competences.Add(new Competence("ПК2", "Способен осуществлять концептуальное, функциональное и логическое проектирование систем среднего и крупного масштаба и сложности", indicators2));
+            int comp_num = 0;
+            foreach (Competence competence in lst)
+            {
+                int ind_num = 0;
+                treeView1.Nodes.Add(competence.discription);
+                foreach (Indicator ind in competence.lstIndicators)
+                {
+                    treeView1.Nodes[comp_num].Nodes.Add(ind.ToString());
+                    treeView1.Nodes[comp_num].Nodes[ind_num].Nodes.Add("Знания");
+                    treeView1.Nodes[comp_num].Nodes[ind_num].Nodes.Add("Умения");
+                    treeView1.Nodes[comp_num].Nodes[ind_num].Nodes.Add("Владения");
+
+                    foreach (string key in ind.dictKnowledge.Keys)
+                    {
+                        treeView1.Nodes[comp_num].Nodes[ind_num].Nodes[0].Nodes.Add(key);
+                    }
+                    ind_num++;
+                }
+                comp_num++;
+            }
+        }
     }
 
 }

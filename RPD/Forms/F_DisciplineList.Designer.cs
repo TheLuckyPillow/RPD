@@ -99,6 +99,11 @@
             // numericUpDown_ZET
             // 
             this.numericUpDown_ZET.Location = new System.Drawing.Point(-1, 176);
+            this.numericUpDown_ZET.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.numericUpDown_ZET.Name = "numericUpDown_ZET";
             this.numericUpDown_ZET.Size = new System.Drawing.Size(75, 20);
             this.numericUpDown_ZET.TabIndex = 8;
@@ -116,6 +121,11 @@
             // numericUpDown_AcademicHours
             // 
             this.numericUpDown_AcademicHours.Location = new System.Drawing.Point(80, 176);
+            this.numericUpDown_AcademicHours.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.numericUpDown_AcademicHours.Name = "numericUpDown_AcademicHours";
             this.numericUpDown_AcademicHours.Size = new System.Drawing.Size(75, 20);
             this.numericUpDown_AcademicHours.TabIndex = 10;
@@ -124,6 +134,11 @@
             // numericUpDown_LectionsHours
             // 
             this.numericUpDown_LectionsHours.Location = new System.Drawing.Point(161, 176);
+            this.numericUpDown_LectionsHours.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.numericUpDown_LectionsHours.Name = "numericUpDown_LectionsHours";
             this.numericUpDown_LectionsHours.Size = new System.Drawing.Size(72, 20);
             this.numericUpDown_LectionsHours.TabIndex = 11;
@@ -132,6 +147,11 @@
             // numericUpDown_SeminarsHours
             // 
             this.numericUpDown_SeminarsHours.Location = new System.Drawing.Point(239, 176);
+            this.numericUpDown_SeminarsHours.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.numericUpDown_SeminarsHours.Name = "numericUpDown_SeminarsHours";
             this.numericUpDown_SeminarsHours.Size = new System.Drawing.Size(72, 20);
             this.numericUpDown_SeminarsHours.TabIndex = 12;
@@ -140,6 +160,11 @@
             // numericUpDown_HomeworkHours
             // 
             this.numericUpDown_HomeworkHours.Location = new System.Drawing.Point(317, 176);
+            this.numericUpDown_HomeworkHours.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.numericUpDown_HomeworkHours.Name = "numericUpDown_HomeworkHours";
             this.numericUpDown_HomeworkHours.Size = new System.Drawing.Size(72, 20);
             this.numericUpDown_HomeworkHours.TabIndex = 13;
@@ -279,6 +304,11 @@
             // numericUpDown1
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(402, 176);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(72, 20);
             this.numericUpDown1.TabIndex = 35;
@@ -404,7 +434,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1271, 645);
+            this.ClientSize = new System.Drawing.Size(1437, 645);
             this.Controls.Add(this.listBox4);
             this.Controls.Add(this.listBox2);
             this.Controls.Add(this.listBox_Discipline);
