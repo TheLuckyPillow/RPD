@@ -39,31 +39,25 @@ namespace RPD
             f_Competencies.Show();
         }
 
+       
         private List<Discipline> lst = new List<Discipline>();
         private Serializer ser = new Serializer();
         private void button3_Click(object sender, EventArgs e)
         {
             XDocument xdoc = XDocument.Load("test.xml");
             XElement dataSet = xdoc.Element("Документ");
-            string regexp = "Дисциплина=";
-            int count = regexp.Length;
             foreach (XElement itemDataSet in dataSet.Elements("ПланыСтроки"))
             {
                 string disciplineName = itemDataSet.Attribute("Дисциплина").Value;
                 int zet = 0;
                 int academicHours = 0;
-                if (itemDataSet.Attribute("ЗЕТфакт")!=null)
+                if (itemDataSet.Attribute("ЗЕТфакт") != null)
                     zet = Convert.ToInt32(itemDataSet.Attribute("ЗЕТфакт").Value);
-                if(itemDataSet.Attribute("ЧасовПоПлану")!= null)
+                if (itemDataSet.Attribute("ЧасовПоПлану") != null)
                     academicHours = Convert.ToInt32(itemDataSet.Attribute("ЧасовПоПлану").Value);
                 lst.Add(new Discipline(disciplineName, zet, academicHours));
-                //label1.Text += "Дисциплина = " + person.Attribute("Дисциплина") + " || " +
-                //                "ЗЕТфакт = " + person.Attribute("ЗЕТфакт") + " || " +
-                //                "ЧасовПоПлану = " + person.Attribute("ЧасовПоПлану") + " || ";
-
             }
             ser.Serialize_list_discipline(lst); //перезапись файла сохранения с новыми пар-рами
         }
     }
-
 }

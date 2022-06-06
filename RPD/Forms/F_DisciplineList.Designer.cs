@@ -61,7 +61,6 @@
             this.listBox_Discipline = new System.Windows.Forms.ListBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.listBox4 = new System.Windows.Forms.ListBox();
-            this.treeView1 = new System.Windows.Forms.TreeView();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_ZET)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_AcademicHours)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_LectionsHours)).BeginInit();
@@ -101,7 +100,7 @@
             // 
             this.numericUpDown_ZET.Location = new System.Drawing.Point(-1, 176);
             this.numericUpDown_ZET.Maximum = new decimal(new int[] {
-            400,
+            10000,
             0,
             0,
             0});
@@ -123,7 +122,7 @@
             // 
             this.numericUpDown_AcademicHours.Location = new System.Drawing.Point(80, 176);
             this.numericUpDown_AcademicHours.Maximum = new decimal(new int[] {
-            1000,
+            10000,
             0,
             0,
             0});
@@ -135,6 +134,11 @@
             // numericUpDown_LectionsHours
             // 
             this.numericUpDown_LectionsHours.Location = new System.Drawing.Point(161, 176);
+            this.numericUpDown_LectionsHours.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.numericUpDown_LectionsHours.Name = "numericUpDown_LectionsHours";
             this.numericUpDown_LectionsHours.Size = new System.Drawing.Size(72, 20);
             this.numericUpDown_LectionsHours.TabIndex = 11;
@@ -143,6 +147,11 @@
             // numericUpDown_SeminarsHours
             // 
             this.numericUpDown_SeminarsHours.Location = new System.Drawing.Point(239, 176);
+            this.numericUpDown_SeminarsHours.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.numericUpDown_SeminarsHours.Name = "numericUpDown_SeminarsHours";
             this.numericUpDown_SeminarsHours.Size = new System.Drawing.Size(72, 20);
             this.numericUpDown_SeminarsHours.TabIndex = 12;
@@ -151,6 +160,11 @@
             // numericUpDown_HomeworkHours
             // 
             this.numericUpDown_HomeworkHours.Location = new System.Drawing.Point(317, 176);
+            this.numericUpDown_HomeworkHours.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.numericUpDown_HomeworkHours.Name = "numericUpDown_HomeworkHours";
             this.numericUpDown_HomeworkHours.Size = new System.Drawing.Size(72, 20);
             this.numericUpDown_HomeworkHours.TabIndex = 13;
@@ -227,10 +241,6 @@
             // 
             this.comboBox_TeachersName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_TeachersName.FormattingEnabled = true;
-            this.comboBox_TeachersName.Items.AddRange(new object[] {
-            "Беднякова Татьяна Михайловна",
-            "Савватеева Татьяна Петровна",
-            "Махалкина Татьяна Олеговна"});
             this.comboBox_TeachersName.Location = new System.Drawing.Point(9, 80);
             this.comboBox_TeachersName.Name = "comboBox_TeachersName";
             this.comboBox_TeachersName.Size = new System.Drawing.Size(392, 21);
@@ -275,7 +285,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(360, 22);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(718, 527);
+            this.groupBox1.Size = new System.Drawing.Size(761, 527);
             this.groupBox1.TabIndex = 26;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
@@ -294,6 +304,11 @@
             // numericUpDown1
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(402, 176);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(72, 20);
             this.numericUpDown1.TabIndex = 35;
@@ -360,7 +375,7 @@
             "к факультативным дисциплинам (модулям)."});
             this.listBox1.Location = new System.Drawing.Point(206, 278);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(364, 95);
+            this.listBox1.Size = new System.Drawing.Size(216, 95);
             this.listBox1.TabIndex = 29;
             // 
             // button1
@@ -415,19 +430,11 @@
             this.listBox4.Size = new System.Drawing.Size(120, 95);
             this.listBox4.TabIndex = 29;
             // 
-            // treeView1
-            // 
-            this.treeView1.Location = new System.Drawing.Point(1084, 46);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(150, 203);
-            this.treeView1.TabIndex = 30;
-            // 
             // F_DisciplineList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1271, 645);
-            this.Controls.Add(this.treeView1);
+            this.ClientSize = new System.Drawing.Size(1437, 645);
             this.Controls.Add(this.listBox4);
             this.Controls.Add(this.listBox2);
             this.Controls.Add(this.listBox_Discipline);
@@ -485,6 +492,5 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.ListBox listBox4;
-        private System.Windows.Forms.TreeView treeView1;
     }
 }

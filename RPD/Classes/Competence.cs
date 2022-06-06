@@ -6,36 +6,37 @@ using System.Threading.Tasks;
 
 namespace RPD.Classes
 {
-    internal class Competence
+    class Competence
     {
+        public Competence()
+        {
+        }
         public Competence(string codeKey, int codeNumber, string discription)
         {
             this.codeKey = codeKey;
             this.codeNumber = codeNumber;
             this.discription = discription;
+
+            this.code = codeKey + "-" + codeNumber.ToString();
+            lstIndicators = new List<Indicator>();
         }
 
-        public Competence(string codeKey, string discription, List<string> indicators)
+        public string codeKey { get; set; }
+        public int codeNumber { get; set; }
+        public string code { get; set; }
+
+        public string discription { get; set; }
+
+        public List<Indicator> lstIndicators { get; set; }
+
+        //метод для принудительного создания листа в объекте, потому как если он создается через конструктор в итоге в него нельзя ничего добавить т.к. = NULL
+        public void lstIndicatorInicialize()
         {
-            this.codeKey = codeKey;
-            //this.codeNumber = codeNumber;
-            this.discription = discription;
-            this.indicators = indicators;
+            lstIndicators = new List<Indicator>();
         }
-
-        public string codeKey;
-        public int codeNumber;
-
-        public string discription;
-        public List<String> indicators;
-
-
-
-        public string id;
-        public string text;
-       // public Dictionary<String, String> indicators;
-        public Dictionary<String, String> knows;
-        public Dictionary<String, String> skills;
-        public Dictionary<String, String> vladenia;
+        public override string ToString()
+        {
+            return code;
+        }
     }
 }

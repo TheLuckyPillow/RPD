@@ -102,7 +102,7 @@ namespace RPD
             }
             catch (FileNotFoundException e)
             {
-                List<Competence> c_list = null;
+                List<Competence> c_list = new List<Competence>();
                 return c_list;
             }
         }
