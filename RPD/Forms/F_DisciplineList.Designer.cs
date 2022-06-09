@@ -47,7 +47,9 @@
             this.comboBox_TeachersName = new System.Windows.Forms.ComboBox();
             this.btn_delete = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.listBox4 = new System.Windows.Forms.ListBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.listBox2 = new System.Windows.Forms.ListBox();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label12 = new System.Windows.Forms.Label();
             this.listBox3 = new System.Windows.Forms.ListBox();
@@ -55,12 +57,10 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_Competencies = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.listBox_Discipline = new System.Windows.Forms.ListBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.listBox4 = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_ZET)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_AcademicHours)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_LectionsHours)).BeginInit();
@@ -258,7 +258,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.listBox4);
             this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Controls.Add(this.listBox2);
             this.groupBox1.Controls.Add(this.numericUpDown1);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.listBox3);
@@ -266,7 +268,7 @@
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.listBox1);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btn_Competencies);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label_Disc_Name);
@@ -291,6 +293,14 @@
             this.groupBox1.Text = "groupBox1";
             this.groupBox1.Visible = false;
             // 
+            // listBox4
+            // 
+            this.listBox4.FormattingEnabled = true;
+            this.listBox4.Location = new System.Drawing.Point(607, 290);
+            this.listBox4.Name = "listBox4";
+            this.listBox4.Size = new System.Drawing.Size(99, 69);
+            this.listBox4.TabIndex = 29;
+            // 
             // label13
             // 
             this.label13.Location = new System.Drawing.Point(399, 124);
@@ -300,6 +310,14 @@
             this.label13.Text = "Контроль";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label13.Click += new System.EventHandler(this.label13_Click);
+            // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.Location = new System.Drawing.Point(508, 290);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(93, 69);
+            this.listBox2.TabIndex = 28;
             // 
             // numericUpDown1
             // 
@@ -317,7 +335,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(518, 372);
+            this.label12.Location = new System.Drawing.Point(505, 16);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(186, 13);
             this.label12.TabIndex = 34;
@@ -331,7 +349,7 @@
             "Экзамен",
             "Диффернецируемый зачет",
             "Курсовая работа"});
-            this.listBox3.Location = new System.Drawing.Point(511, 394);
+            this.listBox3.Location = new System.Drawing.Point(522, 41);
             this.listBox3.Name = "listBox3";
             this.listBox3.Size = new System.Drawing.Size(120, 95);
             this.listBox3.TabIndex = 32;
@@ -339,7 +357,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(203, 375);
+            this.label10.Location = new System.Drawing.Point(519, 274);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(31, 13);
             this.label10.TabIndex = 31;
@@ -348,7 +366,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(349, 372);
+            this.label11.Location = new System.Drawing.Point(604, 274);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(51, 13);
             this.label11.TabIndex = 33;
@@ -357,7 +375,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(203, 262);
+            this.label9.Location = new System.Drawing.Point(505, 145);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(201, 13);
             this.label9.TabIndex = 30;
@@ -373,19 +391,20 @@
             "к части образовательной программы, формируемой участниками образовательных отноше" +
                 "ний, к дисциплинам (модулям) по выбору обучающихся;",
             "к факультативным дисциплинам (модулям)."});
-            this.listBox1.Location = new System.Drawing.Point(206, 278);
+            this.listBox1.Location = new System.Drawing.Point(508, 161);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(216, 95);
             this.listBox1.TabIndex = 29;
             // 
-            // button1
+            // btn_Competencies
             // 
-            this.button1.Location = new System.Drawing.Point(94, 243);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 28;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_Competencies.Location = new System.Drawing.Point(14, 274);
+            this.btn_Competencies.Name = "btn_Competencies";
+            this.btn_Competencies.Size = new System.Drawing.Size(139, 23);
+            this.btn_Competencies.TabIndex = 28;
+            this.btn_Competencies.Text = "Компетенции";
+            this.btn_Competencies.UseVisualStyleBackColor = true;
+            this.btn_Competencies.Click += new System.EventHandler(this.btn_Competencies_Click);
             // 
             // label8
             // 
@@ -414,29 +433,11 @@
             this.listBox_Discipline.TabIndex = 27;
             this.listBox_Discipline.SelectedIndexChanged += new System.EventHandler(this.listBox_Discipline_SelectedIndexChanged);
             // 
-            // listBox2
-            // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(566, 416);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(120, 95);
-            this.listBox2.TabIndex = 28;
-            // 
-            // listBox4
-            // 
-            this.listBox4.FormattingEnabled = true;
-            this.listBox4.Location = new System.Drawing.Point(712, 416);
-            this.listBox4.Name = "listBox4";
-            this.listBox4.Size = new System.Drawing.Size(120, 95);
-            this.listBox4.TabIndex = 29;
-            // 
             // F_DisciplineList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1437, 645);
-            this.Controls.Add(this.listBox4);
-            this.Controls.Add(this.listBox2);
             this.Controls.Add(this.listBox_Discipline);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btn_delete);
@@ -481,7 +482,7 @@
         private System.Windows.Forms.ListBox listBox_Discipline;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_Competencies;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label12;

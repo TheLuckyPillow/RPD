@@ -51,8 +51,11 @@ namespace RPD.Classes
         public int lectionsHours { get; set; }
         public int seminarsHours { get; set; }
         public int homeworkHours { get; set; }
-
-
+        public List<Competence> lstCompetencies { get; set; }
+        public void lstCompetenciesInicialize()
+        {
+            lstCompetencies = new List<Competence>();
+        }
         public override string ToString()
         {
             return disciplineName;

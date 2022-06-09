@@ -159,5 +159,15 @@ namespace RPD
         {
 
         }
+
+        private void btn_Competencies_Click(object sender, EventArgs e)
+        {
+            F_DisciplineList_Competencies f_DisciplineList_Competencies = new F_DisciplineList_Competencies();
+
+            if (f_DisciplineList_Competencies.ShowDialog() == DialogResult.OK) //открытие диалогового окна для добавления
+            {
+                
+            }
+        }
     }
 }

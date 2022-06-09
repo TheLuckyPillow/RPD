@@ -28,7 +28,7 @@ namespace RPD
 
         private void F_Competencies_Load(object sender, EventArgs e)
         {
-            lst = ser.Deserialize_List_competence(); //загрузка списка преподавателей
+            lst = ser.Deserialize_List_competence(); //загрузка списка компетенций
             listBox_Competencies.DataSource = lst;
 
             listBox_Competencies.ClearSelected();
