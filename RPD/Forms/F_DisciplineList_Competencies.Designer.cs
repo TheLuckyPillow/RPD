@@ -51,7 +51,6 @@ namespace RPD.Forms
             this.checkedListBox_Skills = new System.Windows.Forms.CheckedListBox();
             this.checkedListBox_Ownerships = new System.Windows.Forms.CheckedListBox();
             this.btn_Add = new System.Windows.Forms.Button();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.SuspendLayout();
             // 
             // label9
@@ -206,7 +205,7 @@ namespace RPD.Forms
             this.label_Indicator.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label_Indicator.Location = new System.Drawing.Point(424, 49);
             this.label_Indicator.Name = "label_Indicator";
-            this.label_Indicator.Size = new System.Drawing.Size(181, 316);
+            this.label_Indicator.Size = new System.Drawing.Size(181, 253);
             this.label_Indicator.TabIndex = 51;
             this.label_Indicator.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -227,13 +226,14 @@ namespace RPD.Forms
             this.checkedListBox_Indicator.Name = "checkedListBox_Indicator";
             this.checkedListBox_Indicator.Size = new System.Drawing.Size(120, 94);
             this.checkedListBox_Indicator.TabIndex = 70;
+            this.checkedListBox_Indicator.SelectedIndexChanged += new System.EventHandler(this.checkedListBox_Indicator_SelectedIndexChanged);
             // 
             // checkedListBox_Knowledge
             // 
             this.checkedListBox_Knowledge.FormattingEnabled = true;
-            this.checkedListBox_Knowledge.Location = new System.Drawing.Point(716, 63);
+            this.checkedListBox_Knowledge.Location = new System.Drawing.Point(729, 49);
             this.checkedListBox_Knowledge.Name = "checkedListBox_Knowledge";
-            this.checkedListBox_Knowledge.Size = new System.Drawing.Size(120, 94);
+            this.checkedListBox_Knowledge.Size = new System.Drawing.Size(87, 109);
             this.checkedListBox_Knowledge.TabIndex = 71;
             // 
             // checkedListBox_Skills
@@ -241,7 +241,7 @@ namespace RPD.Forms
             this.checkedListBox_Skills.FormattingEnabled = true;
             this.checkedListBox_Skills.Location = new System.Drawing.Point(729, 194);
             this.checkedListBox_Skills.Name = "checkedListBox_Skills";
-            this.checkedListBox_Skills.Size = new System.Drawing.Size(120, 94);
+            this.checkedListBox_Skills.Size = new System.Drawing.Size(87, 94);
             this.checkedListBox_Skills.TabIndex = 72;
             // 
             // checkedListBox_Ownerships
@@ -249,7 +249,7 @@ namespace RPD.Forms
             this.checkedListBox_Ownerships.FormattingEnabled = true;
             this.checkedListBox_Ownerships.Location = new System.Drawing.Point(729, 340);
             this.checkedListBox_Ownerships.Name = "checkedListBox_Ownerships";
-            this.checkedListBox_Ownerships.Size = new System.Drawing.Size(120, 94);
+            this.checkedListBox_Ownerships.Size = new System.Drawing.Size(87, 109);
             this.checkedListBox_Ownerships.TabIndex = 73;
             // 
             // btn_Add
@@ -261,20 +261,11 @@ namespace RPD.Forms
             this.btn_Add.Text = "Добавить";
             this.btn_Add.UseVisualStyleBackColor = true;
             // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(181, 371);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(120, 94);
-            this.checkedListBox1.TabIndex = 75;
-            // 
             // F_DisciplineList_Competencies
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1146, 528);
-            this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.btn_Add);
             this.Controls.Add(this.checkedListBox_Ownerships);
             this.Controls.Add(this.checkedListBox_Skills);
@@ -327,6 +318,5 @@ namespace RPD.Forms
         private System.Windows.Forms.CheckedListBox checkedListBox_Skills;
         private System.Windows.Forms.CheckedListBox checkedListBox_Ownerships;
         private System.Windows.Forms.Button btn_Add;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPD.Classes
 {
-    class Indicator
+    public class Indicator
     {
         public Indicator()
         {

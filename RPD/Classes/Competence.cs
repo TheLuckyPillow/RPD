@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPD.Classes
 {
-    class Competence
+    public partial class Competence
     {
         public Competence()
         {

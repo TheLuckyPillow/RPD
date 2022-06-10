@@ -51,7 +51,7 @@ namespace RPD.Forms
         }
 
         private void btn_Add_Click(object sender, EventArgs e)
-        {
+        {//TODO проверка на заполнение codenumber'а
             this.discription = textBox_Discription.Text;
             this.codeNumber = Convert.ToInt32(textBox_codeNumber.Text);
             this.DialogResult = DialogResult.OK;
