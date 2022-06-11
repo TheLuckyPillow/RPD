@@ -32,8 +32,6 @@ namespace RPD.Forms
         List<CheckedListBox> lstListboxesSkills;
         List<CheckedListBox> lstListboxesOwnerships;
 
-        List<CheckedListBox> lstListboxesSkills;
-        List<CheckedListBox> lstListboxesOwnerships;
 
         private void comboBox_Competence_SelectedIndexChanged(object sender, EventArgs e)
         {   lstListboxesKnowledge = new List<CheckedListBox>();
@@ -106,37 +104,39 @@ namespace RPD.Forms
             compOut = new Competence(lst[comboBox_Competence.SelectedIndex].codeKey, lst[comboBox_Competence.SelectedIndex].codeNumber, lst[comboBox_Competence.SelectedIndex].discription);
             compOut.lstIndicatorInicialize();
             foreach (string s in lst[comboBox_Competence.SelectedIndex].lstIndicators[checkedListBox_Indicator.SelectedIndex].dictOwnerships.Keys)
-            int tmp = 0; //счетчик, чтобы знать, на каком мы индикаторе внутри цикла
-            foreach (Object i in checkedListBox_Indicator.Items) //проходимся по индикаторам
             {
-                if (checkedListBox_Indicator.GetItemCheckState(checkedListBox_Indicator.Items.IndexOf(i)) == CheckState.Checked) //если инидкатор отмечен галочкой
+                int tmp = 0; //счетчик, чтобы знать, на каком мы индикаторе внутри цикла
+                foreach (Object i in checkedListBox_Indicator.Items) //проходимся по индикаторам
                 {
-                    //добавление индикатора в competenceOut
-                    compOut.lstIndicators.Add(new Indicator(lst[comboBox_Competence.SelectedIndex].lstIndicators[tmp].codeKeyComp, lst[comboBox_Competence.SelectedIndex].lstIndicators[tmp].codeNumber, lst[comboBox_Competence.SelectedIndex].lstIndicators[tmp].discription));
-                    compOut.lstIndicators.Last().DictionaryInicialize_K();
-                    compOut.lstIndicators.Last().DictionaryInicialize_S();
-                    compOut.lstIndicators.Last().DictionaryInicialize_O();
-                checkedListBox_Ownerships.Items.Add(s);//заполнение listbox'а владений
-                    string knowledgeClass = "checkedListBox_Knowledge" + i.ToString();
-                    foreach (Object chlbItem in (groupBox_ZUV.Controls[knowledgeClass] as CheckedListBox).CheckedItems) //проходися по Items checkedListBox'a с классом knowledgeClass
+                    if (checkedListBox_Indicator.GetItemCheckState(checkedListBox_Indicator.Items.IndexOf(i)) == CheckState.Checked) //если инидкатор отмечен галочкой
                     {
-                        //добавление в словарь dictKnowledge отмеченных знаний
-                        compOut.lstIndicators.Last().dictKnowledge.Add(chlbItem.ToString(), lst[comboBox_Competence.SelectedIndex].lstIndicators[tmp].dictKnowledge[chlbItem.ToString()]);
+                        //добавление индикатора в competenceOut
+                        compOut.lstIndicators.Add(new Indicator(lst[comboBox_Competence.SelectedIndex].lstIndicators[tmp].codeKeyComp, lst[comboBox_Competence.SelectedIndex].lstIndicators[tmp].codeNumber, lst[comboBox_Competence.SelectedIndex].lstIndicators[tmp].discription));
+                        compOut.lstIndicators.Last().DictionaryInicialize_K();
+                        compOut.lstIndicators.Last().DictionaryInicialize_S();
+                        compOut.lstIndicators.Last().DictionaryInicialize_O();
+                        //checkedListBox_Ownerships.Items.Add(s);//заполнение listbox'а владений
+                        string knowledgeClass = "checkedListBox_Knowledge" + i.ToString();
+                        foreach (Object chlbItem in (groupBox_ZUV.Controls[knowledgeClass] as CheckedListBox).CheckedItems) //проходися по Items checkedListBox'a с классом knowledgeClass
+                        {
+                            //добавление в словарь dictKnowledge отмеченных знаний
+                            compOut.lstIndicators.Last().dictKnowledge.Add(chlbItem.ToString(), lst[comboBox_Competence.SelectedIndex].lstIndicators[tmp].dictKnowledge[chlbItem.ToString()]);
+                        }
+                        string skillsClass = "checkedListBox_Skills" + i.ToString();
+                        foreach (Object chlbItem in (groupBox_ZUV.Controls[skillsClass] as CheckedListBox).CheckedItems) //проходися по Items checkedListBox'a с классом skillsClass
+                        {
+                            //добавление в словарь dictSkills отмеченных умений
+                            compOut.lstIndicators.Last().dictSkills.Add(chlbItem.ToString(), lst[comboBox_Competence.SelectedIndex].lstIndicators[tmp].dictSkills[chlbItem.ToString()]);
+                        }
+                        string ownershipsClass = "checkedListBox_Ownerships" + i.ToString();
+                        foreach (Object chlbItem in (groupBox_ZUV.Controls[ownershipsClass] as CheckedListBox).CheckedItems) //проходися по Items checkedListBox'a с классом ownershipsClass
+                        {
+                            //добавление в словарь dictOwnerships отмеченных владений
+                            compOut.lstIndicators.Last().dictOwnerships.Add(chlbItem.ToString(), lst[comboBox_Competence.SelectedIndex].lstIndicators[tmp].dictOwnerships[chlbItem.ToString()]);
+                        }
                     }
-                    string skillsClass = "checkedListBox_Skills" + i.ToString();
-                    foreach (Object chlbItem in (groupBox_ZUV.Controls[skillsClass] as CheckedListBox).CheckedItems) //проходися по Items checkedListBox'a с классом skillsClass
-                    {
-                        //добавление в словарь dictSkills отмеченных умений
-                        compOut.lstIndicators.Last().dictSkills.Add(chlbItem.ToString(), lst[comboBox_Competence.SelectedIndex].lstIndicators[tmp].dictSkills[chlbItem.ToString()]);
-                    }
-                    string ownershipsClass = "checkedListBox_Ownerships" + i.ToString();
-                    foreach (Object chlbItem in (groupBox_ZUV.Controls[ownershipsClass] as CheckedListBox).CheckedItems) //проходися по Items checkedListBox'a с классом ownershipsClass
-                    {
-                        //добавление в словарь dictOwnerships отмеченных владений
-                        compOut.lstIndicators.Last().dictOwnerships.Add(chlbItem.ToString(), lst[comboBox_Competence.SelectedIndex].lstIndicators[tmp].dictOwnerships[chlbItem.ToString()]);
-                    }
+                    tmp++;
                 }
-                tmp++;
             }
             this.DialogResult = DialogResult.OK;
         }
