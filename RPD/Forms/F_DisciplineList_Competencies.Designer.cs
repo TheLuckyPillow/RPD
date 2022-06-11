@@ -230,14 +230,16 @@ namespace RPD.Forms
             // 
             // checkedListBox_Knowledge
             // 
+            this.checkedListBox_Knowledge.CheckOnClick = true;
             this.checkedListBox_Knowledge.FormattingEnabled = true;
-            this.checkedListBox_Knowledge.Location = new System.Drawing.Point(729, 49);
+            this.checkedListBox_Knowledge.Location = new System.Drawing.Point(888, 82);
             this.checkedListBox_Knowledge.Name = "checkedListBox_Knowledge";
             this.checkedListBox_Knowledge.Size = new System.Drawing.Size(87, 109);
             this.checkedListBox_Knowledge.TabIndex = 71;
             // 
             // checkedListBox_Skills
             // 
+            this.checkedListBox_Skills.CheckOnClick = true;
             this.checkedListBox_Skills.FormattingEnabled = true;
             this.checkedListBox_Skills.Location = new System.Drawing.Point(729, 194);
             this.checkedListBox_Skills.Name = "checkedListBox_Skills";
@@ -246,6 +248,7 @@ namespace RPD.Forms
             // 
             // checkedListBox_Ownerships
             // 
+            this.checkedListBox_Ownerships.CheckOnClick = true;
             this.checkedListBox_Ownerships.FormattingEnabled = true;
             this.checkedListBox_Ownerships.Location = new System.Drawing.Point(729, 340);
             this.checkedListBox_Ownerships.Name = "checkedListBox_Ownerships";

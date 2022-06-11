@@ -27,9 +27,9 @@ namespace RPD.Forms
             lst = ser.Deserialize_List_competence(); //загрузка списка компетенций
             comboBox_Competence.DataSource = lst;
         }
-
+        List<CheckedListBox> lstListboxesKnowledge;
         private void comboBox_Competence_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        {   lstListboxesKnowledge = new List<CheckedListBox>();
             compToDisc = lst[comboBox_Competence.SelectedIndex]; //выбранная комп в отдельный объект
             //foreach (Indicator i in compToDisc.lstIndicators)
             //{
@@ -38,14 +38,27 @@ namespace RPD.Forms
             //    i.dictOwnerships.Clear();
             //} //очистка словарей ЗУВ всех индикаторов в объекте выбранной комп
             checkedListBox_Indicator.Items.Clear();
+
             foreach (Indicator i in lst[comboBox_Competence.SelectedIndex].lstIndicators)
             {
                 checkedListBox_Indicator.Items.Add(i);//заполнение индикаторов из полного lst всех компетенций
+
+                CheckedListBox checkedListBox1 = new CheckedListBox();
+                checkedListBox1.Location = new System.Drawing.Point(700, 149);
+                foreach (string s in i.dictKnowledge.Keys)
+                    checkedListBox1.Items.Add(s);//заполнение listbox'а знаний
+                checkedListBox1.Visible = false;
+                this.Controls.Add(checkedListBox1);
+                lstListboxesKnowledge.Add(checkedListBox1);
             }//TODO проверка ну пустой лист индикаторов
         }
 
         private void checkedListBox_Indicator_SelectedIndexChanged(object sender, EventArgs e)
         {
+            foreach (CheckedListBox chlb in lstListboxesKnowledge)
+                chlb.Visible = false;
+            lstListboxesKnowledge[checkedListBox_Indicator.SelectedIndex].Visible = true;
+
             checkedListBox_Knowledge.Items.Clear();
             checkedListBox_Skills.Items.Clear();
             checkedListBox_Ownerships.Items.Clear();
