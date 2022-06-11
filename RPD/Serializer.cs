@@ -14,12 +14,15 @@ namespace RPD
 {
     class Serializer
     {
+        string path_discipline = "../../Resources/save_discipline.json";
+        string path_teachers = "../../Resources/save_teachers.json";
+        string path_competence = "../../Resources/save_competence.json";
         //возвращает список объектов класса Discipline из файла save_discipline.json
         public List<Discipline> Deserialize_List_discipline()
         {
             try
             {
-                using (FileStream fileStream = new FileStream("save_discipline.json", FileMode.Open))
+                using (FileStream fileStream = new FileStream(path_discipline, FileMode.Open))
                 {
                     List<Discipline> d_list = JsonSerializer.Deserialize<List<Discipline>>(fileStream);
                     return d_list;
@@ -38,14 +41,14 @@ namespace RPD
             string json = JsonSerializer.Serialize(d);
             try
             {
-                using (FileStream fileStream = new FileStream("save_discipline.json", FileMode.Truncate))
+                using (FileStream fileStream = new FileStream(path_discipline, FileMode.Truncate))
                 {
                     JsonSerializer.Serialize(fileStream, d);
                 }
             }
             catch (FileNotFoundException e)
             {
-                using (FileStream fileStream = new FileStream("save_discipline.json", FileMode.CreateNew))
+                using (FileStream fileStream = new FileStream(path_discipline, FileMode.CreateNew))
                 {
                     JsonSerializer.Serialize(fileStream, d);
                 }
@@ -57,7 +60,7 @@ namespace RPD
         {
             try
             {
-                using (FileStream fileStream = new FileStream("save_teachers.json", FileMode.Open))
+                using (FileStream fileStream = new FileStream(path_teachers, FileMode.Open))
                 {
                     List<Teachers> t_list = JsonSerializer.Deserialize<List<Teachers>>(fileStream);
                     return t_list;
@@ -76,14 +79,14 @@ namespace RPD
             string json = JsonSerializer.Serialize(t);
             try
             {
-                using (FileStream fileStream = new FileStream("save_teachers.json", FileMode.Truncate))
+                using (FileStream fileStream = new FileStream(path_teachers, FileMode.Truncate))
                 {
                     JsonSerializer.Serialize(fileStream, t);
                 }
             }
             catch (FileNotFoundException)
             {
-                using (FileStream fileStream = new FileStream("save_teachers.json", FileMode.CreateNew))
+                using (FileStream fileStream = new FileStream(path_teachers, FileMode.CreateNew))
                 {
                     JsonSerializer.Serialize(fileStream, t);
                 }
@@ -92,19 +95,19 @@ namespace RPD
 
         public List<Competence> Deserialize_List_competence()
         {
-            try
-            {
-                using (FileStream fileStream = new FileStream("save_competence.json", FileMode.Open))
+            //try
+            //{
+                using (FileStream fileStream = new FileStream(path_competence, FileMode.Open))
                 {
                     List<Competence> c_list = JsonSerializer.Deserialize<List<Competence>>(fileStream);
                     return c_list;
                 }
-            }
-            catch (FileNotFoundException e)
-            {
-                List<Competence> c_list = new List<Competence>();
-                return c_list;
-            }
+            //}
+            //catch (FileNotFoundException e)
+            //{
+            //    List<Competence> c_list = new List<Competence>();
+            //    return c_list;
+            //}
         }
 
         //перезаписывает список объектов класса Teachers в файл save_teachers.json
@@ -113,14 +116,14 @@ namespace RPD
             string json = JsonSerializer.Serialize(c);
             try
             {
-                using (FileStream fileStream = new FileStream("save_competence.json", FileMode.Truncate))
+                using (FileStream fileStream = new FileStream(path_competence, FileMode.Truncate))
                 {
                     JsonSerializer.Serialize(fileStream, c);
                 }
             }
             catch (FileNotFoundException e)
             {
-                using (FileStream fileStream = new FileStream("save_competence.json", FileMode.CreateNew))
+                using (FileStream fileStream = new FileStream(path_competence, FileMode.CreateNew))
                 {
                     JsonSerializer.Serialize(fileStream, c);
                 }

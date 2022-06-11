@@ -32,6 +32,9 @@ namespace RPD.Forms
         List<CheckedListBox> lstListboxesSkills;
         List<CheckedListBox> lstListboxesOwnerships;
 
+        List<CheckedListBox> lstListboxesSkills;
+        List<CheckedListBox> lstListboxesOwnerships;
+
         private void comboBox_Competence_SelectedIndexChanged(object sender, EventArgs e)
         {   lstListboxesKnowledge = new List<CheckedListBox>();
             lstListboxesSkills = new List<CheckedListBox>();
@@ -102,7 +105,7 @@ namespace RPD.Forms
             //инициализация объекта competenceOut
             compOut = new Competence(lst[comboBox_Competence.SelectedIndex].codeKey, lst[comboBox_Competence.SelectedIndex].codeNumber, lst[comboBox_Competence.SelectedIndex].discription);
             compOut.lstIndicatorInicialize();
-
+            foreach (string s in lst[comboBox_Competence.SelectedIndex].lstIndicators[checkedListBox_Indicator.SelectedIndex].dictOwnerships.Keys)
             int tmp = 0; //счетчик, чтобы знать, на каком мы индикаторе внутри цикла
             foreach (Object i in checkedListBox_Indicator.Items) //проходимся по индикаторам
             {
@@ -113,7 +116,7 @@ namespace RPD.Forms
                     compOut.lstIndicators.Last().DictionaryInicialize_K();
                     compOut.lstIndicators.Last().DictionaryInicialize_S();
                     compOut.lstIndicators.Last().DictionaryInicialize_O();
-
+                checkedListBox_Ownerships.Items.Add(s);//заполнение listbox'а владений
                     string knowledgeClass = "checkedListBox_Knowledge" + i.ToString();
                     foreach (Object chlbItem in (groupBox_ZUV.Controls[knowledgeClass] as CheckedListBox).CheckedItems) //проходися по Items checkedListBox'a с классом knowledgeClass
                     {
@@ -141,6 +144,8 @@ namespace RPD.Forms
         private void btn_Cancel_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
+
+
         }
 
         //TODO Важно! Вывод на лейбл выделения зува
