@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPD.Classes
 {
-    public partial class Competence
+    public partial class Competence: ICloneable
     {
         public Competence()
         {
@@ -29,6 +29,11 @@ namespace RPD.Classes
 
         public List<Indicator> lstIndicators { get; set; }
 
+        public object Clone()
+        {
+            return new Competence(this.codeKey, this.codeNumber, this.discription);
+        }
+
         //метод для принудительного создания листа в объекте, потому как если он создается через конструктор в итоге в него нельзя ничего добавить т.к. = NULL
         public void lstIndicatorInicialize()
         {
@@ -38,5 +43,8 @@ namespace RPD.Classes
         {
             return code;
         }
+
+      
+
     }
 }
