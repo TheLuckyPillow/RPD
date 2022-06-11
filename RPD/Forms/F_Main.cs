@@ -63,14 +63,16 @@ namespace RPD
             //ser.Serialize_list_discipline(lst); //перезапись файла сохранения с новыми пар-рами
 
             //----------------------- список преподавателей из .xls файла программы-------------------------------------
+            // TODO исправить на относительный путь
+            // TODO заполнение исходными данными вынести на отдельную форму или кнопки
             string pathToFile = "D:\\music\\RPD (2)\\RPD\\RPD\\Resources\\teachers.xlsx";
             Excel.Application excelApp = new Excel.Application();
             Excel.Workbook ObjWorkBook = excelApp.Workbooks.Open(pathToFile);
                 //, 0, false, 5, "", "", false, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "", true, false, 0, true, false, false);
             Excel.Worksheet ObjWorkSheet = (Excel.Worksheet)ObjWorkBook.Sheets[1];
             // Указываем номер столбца (таблицы Excel) из которого будут считываться данные.
-            int count = Convert.ToInt32(ObjWorkSheet.Cells[1, 1].value);
-            count = 5;
+            int count = Convert.ToInt32(ObjWorkSheet.Cells[1, 1].value) + 2;
+            //count = 5; 
             for (int i = 2; i < count; i++)
             {
                 lst_teachers.Add(new Teachers(ObjWorkSheet.Cells[i, 2].value, ObjWorkSheet.Cells[i, 3].value));
@@ -79,11 +81,12 @@ namespace RPD
             //string t = ObjWorkSheet.Cells[2, 2].value;
 
             //label_test.Text = ObjWorkSheet.Cells[2, 2].value;
-           // Range usedColumn = ObjWorkSheet.UsedRange.Columns[numCol];
+            // Range usedColumn = ObjWorkSheet.UsedRange.Columns[numCol];
             //System.Array myvalues = (System.Array)usedColumn.Cells.Value2;
             //string[] strArray = myvalues.OfType<object>().Select(o => o.ToString()).ToArray();
 
             // Выходим из программы Excel.
+            // TODO исправить: Excel не закрывается!
             excelApp.Quit();
            
         }
