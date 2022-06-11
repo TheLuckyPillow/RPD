@@ -61,6 +61,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.listBox_Discipline = new System.Windows.Forms.ListBox();
+            this.treeView_Competencies = new System.Windows.Forms.TreeView();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_ZET)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_AcademicHours)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_LectionsHours)).BeginInit();
@@ -210,7 +211,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(665, 610);
+            this.button2.Location = new System.Drawing.Point(592, 365);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(123, 23);
             this.button2.TabIndex = 18;
@@ -258,10 +259,12 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.treeView_Competencies);
             this.groupBox1.Controls.Add(this.listBox4);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.listBox2);
             this.groupBox1.Controls.Add(this.numericUpDown1);
+            this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.listBox3);
             this.groupBox1.Controls.Add(this.label10);
@@ -433,6 +436,13 @@
             this.listBox_Discipline.TabIndex = 27;
             this.listBox_Discipline.SelectedIndexChanged += new System.EventHandler(this.listBox_Discipline_SelectedIndexChanged);
             // 
+            // treeView_Competencies
+            // 
+            this.treeView_Competencies.Location = new System.Drawing.Point(9, 323);
+            this.treeView_Competencies.Name = "treeView_Competencies";
+            this.treeView_Competencies.Size = new System.Drawing.Size(408, 184);
+            this.treeView_Competencies.TabIndex = 37;
+            // 
             // F_DisciplineList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -443,7 +453,6 @@
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.btn_Add);
             this.Controls.Add(this.btn_Save);
-            this.Controls.Add(this.button2);
             this.Name = "F_DisciplineList";
             this.Text = "Список дисциплин";
             this.Load += new System.EventHandler(this.ListDisciplines_Load);
@@ -493,5 +502,6 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.ListBox listBox4;
+        private System.Windows.Forms.TreeView treeView_Competencies;
     }
 }

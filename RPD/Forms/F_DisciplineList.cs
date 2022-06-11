@@ -15,10 +15,8 @@ namespace RPD
     public partial class F_DisciplineList : Form
     {
         private Serializer ser = new Serializer(); //объект класса Serialize для работы с файлом "Save"
-        private List<Discipline> lst;
-        //= new List<Discipline>(); //Список объектов класса дисциплин
+        private List<Discipline> lst; //общий список дисциплин из файла
       
-
         public F_DisciplineList()
         {
             InitializeComponent();
@@ -26,7 +24,6 @@ namespace RPD
 
         private void ListDisciplines_Load(object sender, EventArgs e)
         {
-
             lst = ser.Deserialize_List_discipline(); //загрузка списка дисциплин из файла ""save_discipline.json"
             listBox_Discipline.ClearSelected();
             listBox_Discipline.DataSource = lst;
@@ -38,7 +35,6 @@ namespace RPD
             groupBox1.Visible = false; //Скрытие панели настроек
         }
 
-        
         private void btn_Add_Click(object sender, EventArgs e)
         {
             F_DisciplineList_Popup f_DisciplineList_Popup = new F_DisciplineList_Popup();
@@ -64,7 +60,6 @@ namespace RPD
             lst[listBox_Discipline.SelectedIndex].seminarsHours = Convert.ToInt32(numericUpDown_SeminarsHours.Value);
             lst[listBox_Discipline.SelectedIndex].homeworkHours = Convert.ToInt32(numericUpDown_HomeworkHours.Value);
 
-
             listBox_Discipline.ClearSelected();
             ser.Serialize_list_discipline(lst);//перезапись файла сохранения с новыми пар-рами
             listBox_Discipline.DataSource = null; //обновление listbox
@@ -83,7 +78,6 @@ namespace RPD
 
         private void listBox_Discipline_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
             if (listBox_Discipline.SelectedIndex != -1)
             {
                 groupBox1.Visible = true;
@@ -96,12 +90,17 @@ namespace RPD
                 numericUpDown_SeminarsHours.Value = lst[listBox_Discipline.SelectedIndex].seminarsHours;
                 numericUpDown_HomeworkHours.Value = lst[listBox_Discipline.SelectedIndex].homeworkHours;
 
-            } //Если элемент не выделен, срабатывает SelectedIndexChanged, пытаясь использовать элемент, который не выделен
+
+                if (lst[listBox_Discipline.SelectedIndex].lstCompetencies != null)
+                    treeViewUpdate();
+                else
+                    treeView_Competencies.Nodes.Clear();
+            }
         }
 
         private void numericUpDown_ZET_ValueChanged(object sender, EventArgs e)
         {
-            numericUpDown_AcademicHours.Value = numericUpDown_ZET.Value * 36; // завести константу и хранить в файле 
+            numericUpDown_AcademicHours.Value = numericUpDown_ZET.Value * 36; //TODO завести константу и хранить в файле 
         }
 
         private void numericUpDown_LectionsHours_ValueChanged(object sender, EventArgs e)
@@ -161,12 +160,44 @@ namespace RPD
         }
 
         private void btn_Competencies_Click(object sender, EventArgs e)
-        {
+        {//TODO Важно! проверка на добавление уже существующей компетенции/редактирование её
             F_DisciplineList_Competencies f_DisciplineList_Competencies = new F_DisciplineList_Competencies();
 
             if (f_DisciplineList_Competencies.ShowDialog() == DialogResult.OK) //открытие диалогового окна для добавления
             {
-                
+                if (lst[listBox_Discipline.SelectedIndex].lstCompetencies == null)
+                    lst[listBox_Discipline.SelectedIndex].lstCompetenciesInicialize();
+
+                lst[listBox_Discipline.SelectedIndex].lstCompetencies.Add(f_DisciplineList_Competencies.compOut);
+                ser.Serialize_list_discipline(lst);
+                treeViewUpdate();
+            }
+        }
+
+        private void treeViewUpdate()
+        {
+            treeView_Competencies.Nodes.Clear();
+            int comp_num = 0;
+            foreach (Competence comp in lst[listBox_Discipline.SelectedIndex].lstCompetencies)
+            {
+                int ind_num = 0;
+                treeView_Competencies.Nodes.Add(comp.code);
+                foreach (Indicator ind in comp.lstIndicators)
+                {
+                    treeView_Competencies.Nodes[comp_num].Nodes.Add(ind.ToString());
+                    treeView_Competencies.Nodes[comp_num].Nodes[ind_num].Nodes.Add("Знания");
+                    treeView_Competencies.Nodes[comp_num].Nodes[ind_num].Nodes.Add("Умения");
+                    treeView_Competencies.Nodes[comp_num].Nodes[ind_num].Nodes.Add("Владения");
+
+                    foreach (string key in ind.dictKnowledge.Keys)
+                        treeView_Competencies.Nodes[comp_num].Nodes[ind_num].Nodes[0].Nodes.Add(key);
+                    foreach (string key in ind.dictSkills.Keys)
+                        treeView_Competencies.Nodes[comp_num].Nodes[ind_num].Nodes[1].Nodes.Add(key);
+                    foreach (string key in ind.dictOwnerships.Keys)
+                        treeView_Competencies.Nodes[comp_num].Nodes[ind_num].Nodes[2].Nodes.Add(key);
+                    ind_num++;
+                }
+                comp_num++;
             }
         }
     }

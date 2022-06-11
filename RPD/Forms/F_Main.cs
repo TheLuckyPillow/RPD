@@ -44,7 +44,7 @@ namespace RPD
         private Serializer ser = new Serializer();
         private void button3_Click(object sender, EventArgs e)
         {
-            XDocument xdoc = XDocument.Load("test.xml");//TODO проверка на файл exist
+            XDocument xdoc = XDocument.Load("test.xml");//TODO Важно! проверка на файл exist
             XElement dataSet = xdoc.Element("Документ");
             foreach (XElement itemDataSet in dataSet.Elements("ПланыСтроки"))
             {
