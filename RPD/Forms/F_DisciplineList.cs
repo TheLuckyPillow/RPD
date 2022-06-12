@@ -160,7 +160,7 @@ namespace RPD
         }
 
         private void btn_Competencies_Click(object sender, EventArgs e)
-        {//TODO Важно! проверка на добавление уже существующей компетенции/редактирование её
+        {// TODO: Важно! проверка на добавление уже существующей компетенции/редактирование её
             F_DisciplineList_Competencies f_DisciplineList_Competencies = new F_DisciplineList_Competencies();
 
             if (f_DisciplineList_Competencies.ShowDialog() == DialogResult.OK) //открытие диалогового окна для добавления
@@ -199,6 +199,19 @@ namespace RPD
                 }
                 comp_num++;
             }
+        }
+
+        private void btn_CreatePattern_Click(object sender, EventArgs e)
+        {
+            WordMy word = new WordMy("../../Resources/Шаблон_РПД_2021.docx");
+
+            Dictionary<string, string> items = new Dictionary<string, string>
+            {
+                {"<DisciplineName>", lst[listBox_Discipline.SelectedIndex].disciplineName },
+                {"<TeacherName>", lst[listBox_Discipline.SelectedIndex].teachersName }
+            };
+
+            word.CreateDoc(items);
         }
     }
 }

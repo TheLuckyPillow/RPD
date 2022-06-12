@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using Excel = Microsoft.Office.Interop.Excel;
 
 namespace RPD
@@ -46,21 +47,7 @@ namespace RPD
         private Serializer ser = new Serializer();
         private void button3_Click(object sender, EventArgs e)
         {
-            //----------------------- список дисциплин из plx файла программы-------------------------------------
-            //XDocument xdoc = XDocument.Load("test.xml");//TODO проверка на файл exist
-            //XElement dataSet = xdoc.Element("Документ");
-            //foreach (XElement itemDataSet in dataSet.Elements("ПланыСтроки"))
-            //{
-            //    string disciplineName = itemDataSet.Attribute("Дисциплина").Value;
-            //    int zet = 0;
-            //    int academicHours = 0;
-            //    if (itemDataSet.Attribute("ЗЕТфакт") != null)
-            //        zet = Convert.ToInt32(itemDataSet.Attribute("ЗЕТфакт").Value);
-            //    if (itemDataSet.Attribute("ЧасовПоПлану") != null)
-            //        academicHours = Convert.ToInt32(itemDataSet.Attribute("ЧасовПоПлану").Value);
-            //    lst.Add(new Discipline(disciplineName, zet, academicHours));
-            //}
-            //ser.Serialize_list_discipline(lst); //перезапись файла сохранения с новыми пар-рами
+
 
             //----------------------- список преподавателей из .xls файла программы-------------------------------------
             // TODO исправить на относительный путь
@@ -89,6 +76,25 @@ namespace RPD
             // TODO исправить: Excel не закрывается!
             excelApp.Quit();
            
+        }
+
+        private void btn_DisciplineLoad_Click(object sender, EventArgs e)
+        {
+            //----------------------- список дисциплин из plx файла программы-------------------------------------
+            XDocument xdoc = XDocument.Load("test.xml");//TODO проверка на файл exist
+            XElement dataSet = xdoc.Element("Документ");
+            foreach (XElement itemDataSet in dataSet.Elements("ПланыСтроки"))
+            {
+                string disciplineName = itemDataSet.Attribute("Дисциплина").Value;
+                int zet = 0;
+                int academicHours = 0;
+                if (itemDataSet.Attribute("ЗЕТфакт") != null)
+                    zet = Convert.ToInt32(itemDataSet.Attribute("ЗЕТфакт").Value);
+                if (itemDataSet.Attribute("ЧасовПоПлану") != null)
+                    academicHours = Convert.ToInt32(itemDataSet.Attribute("ЧасовПоПлану").Value);
+                lst.Add(new Discipline(disciplineName, zet, academicHours));
+            }
+            ser.Serialize_list_discipline(lst); //перезапись файла сохранения с новыми пар-рами
         }
     }
 }

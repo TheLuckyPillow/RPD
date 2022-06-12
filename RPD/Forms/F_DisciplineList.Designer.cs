@@ -41,12 +41,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_CreatePattern = new System.Windows.Forms.Button();
             this.btn_Add = new System.Windows.Forms.Button();
             this.btn_Save = new System.Windows.Forms.Button();
             this.comboBox_TeachersName = new System.Windows.Forms.ComboBox();
             this.btn_delete = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.treeView_Competencies = new System.Windows.Forms.TreeView();
             this.listBox4 = new System.Windows.Forms.ListBox();
             this.label13 = new System.Windows.Forms.Label();
             this.listBox2 = new System.Windows.Forms.ListBox();
@@ -61,7 +62,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.listBox_Discipline = new System.Windows.Forms.ListBox();
-            this.treeView_Competencies = new System.Windows.Forms.TreeView();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_ZET)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_AcademicHours)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_LectionsHours)).BeginInit();
@@ -209,14 +209,15 @@
             this.label6.Text = "Самостоятельная работа обучающегося";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button2
+            // btn_CreatePattern
             // 
-            this.button2.Location = new System.Drawing.Point(592, 365);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(123, 23);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "создать шаблон";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_CreatePattern.Location = new System.Drawing.Point(508, 498);
+            this.btn_CreatePattern.Name = "btn_CreatePattern";
+            this.btn_CreatePattern.Size = new System.Drawing.Size(123, 23);
+            this.btn_CreatePattern.TabIndex = 18;
+            this.btn_CreatePattern.Text = "Создать шаблон";
+            this.btn_CreatePattern.UseVisualStyleBackColor = true;
+            this.btn_CreatePattern.Click += new System.EventHandler(this.btn_CreatePattern_Click);
             // 
             // btn_Add
             // 
@@ -230,7 +231,7 @@
             // 
             // btn_Save
             // 
-            this.btn_Save.Location = new System.Drawing.Point(366, 464);
+            this.btn_Save.Location = new System.Drawing.Point(175, 274);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(125, 23);
             this.btn_Save.TabIndex = 23;
@@ -263,8 +264,9 @@
             this.groupBox1.Controls.Add(this.listBox4);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.listBox2);
+            this.groupBox1.Controls.Add(this.btn_Save);
             this.groupBox1.Controls.Add(this.numericUpDown1);
-            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.btn_CreatePattern);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.listBox3);
             this.groupBox1.Controls.Add(this.label10);
@@ -288,13 +290,20 @@
             this.groupBox1.Controls.Add(this.numericUpDown_HomeworkHours);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(360, 22);
+            this.groupBox1.Location = new System.Drawing.Point(327, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(761, 527);
             this.groupBox1.TabIndex = 26;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             this.groupBox1.Visible = false;
+            // 
+            // treeView_Competencies
+            // 
+            this.treeView_Competencies.Location = new System.Drawing.Point(9, 323);
+            this.treeView_Competencies.Name = "treeView_Competencies";
+            this.treeView_Competencies.Size = new System.Drawing.Size(408, 184);
+            this.treeView_Competencies.TabIndex = 37;
             // 
             // listBox4
             // 
@@ -436,23 +445,15 @@
             this.listBox_Discipline.TabIndex = 27;
             this.listBox_Discipline.SelectedIndexChanged += new System.EventHandler(this.listBox_Discipline_SelectedIndexChanged);
             // 
-            // treeView_Competencies
-            // 
-            this.treeView_Competencies.Location = new System.Drawing.Point(9, 323);
-            this.treeView_Competencies.Name = "treeView_Competencies";
-            this.treeView_Competencies.Size = new System.Drawing.Size(408, 184);
-            this.treeView_Competencies.TabIndex = 37;
-            // 
             // F_DisciplineList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1437, 645);
+            this.ClientSize = new System.Drawing.Size(1432, 658);
             this.Controls.Add(this.listBox_Discipline);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.btn_Add);
-            this.Controls.Add(this.btn_Save);
             this.Name = "F_DisciplineList";
             this.Text = "Список дисциплин";
             this.Load += new System.EventHandler(this.ListDisciplines_Load);
@@ -482,7 +483,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_CreatePattern;
         private System.Windows.Forms.Button btn_Add;
         private System.Windows.Forms.Button btn_Save;
         private System.Windows.Forms.ComboBox comboBox_TeachersName;

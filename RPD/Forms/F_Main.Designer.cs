@@ -34,6 +34,7 @@
             this.btn_TeachersList = new System.Windows.Forms.Button();
             this.btn_CompetenciesList = new System.Windows.Forms.Button();
             this.label_test = new System.Windows.Forms.Label();
+            this.btn_DisciplineLoad = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button2
@@ -89,17 +90,28 @@
             // label_test
             // 
             this.label_test.AutoSize = true;
-            this.label_test.Location = new System.Drawing.Point(330, 406);
+            this.label_test.Location = new System.Drawing.Point(508, 392);
             this.label_test.Name = "label_test";
             this.label_test.Size = new System.Drawing.Size(35, 13);
             this.label_test.TabIndex = 12;
             this.label_test.Text = "label1";
+            // 
+            // btn_DisciplineLoad
+            // 
+            this.btn_DisciplineLoad.Location = new System.Drawing.Point(184, 392);
+            this.btn_DisciplineLoad.Name = "btn_DisciplineLoad";
+            this.btn_DisciplineLoad.Size = new System.Drawing.Size(166, 46);
+            this.btn_DisciplineLoad.TabIndex = 13;
+            this.btn_DisciplineLoad.Text = "Загрузить дисциплины из учебного плана";
+            this.btn_DisciplineLoad.UseVisualStyleBackColor = true;
+            this.btn_DisciplineLoad.Click += new System.EventHandler(this.btn_DisciplineLoad_Click);
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_DisciplineLoad);
             this.Controls.Add(this.label_test);
             this.Controls.Add(this.btn_CompetenciesList);
             this.Controls.Add(this.btn_TeachersList);
@@ -120,6 +132,7 @@
         private System.Windows.Forms.Button btn_TeachersList;
         private System.Windows.Forms.Button btn_CompetenciesList;
         private System.Windows.Forms.Label label_test;
+        private System.Windows.Forms.Button btn_DisciplineLoad;
     }
 }
 

@@ -25,7 +25,7 @@ namespace RPD.Forms
             textBox_Discription.Text = "Введите содержание компетенции";
             textBox_Discription.ForeColor = Color.Gray;
 
-            textBox_codeNumber.TabIndex = 1; //TODO найти это свойство, чтобы не было лишней строчки
+            textBox_codeNumber.TabIndex = 1; //TODO: найти это свойство, чтобы не было лишней строчки
         }
 
         //исчезание подсказки ввода

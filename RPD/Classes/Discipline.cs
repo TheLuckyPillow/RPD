@@ -33,7 +33,7 @@ namespace RPD.Classes
             this.lectionsHours = lectionsHours;
             this.seminarsHours = seminarsHours;
             this.homeworkHours = homeworkHours;
-            // TODO  сделать проверку на корректность
+            //TODO  сделать проверку на корректность
         }
         public Discipline(string nameDiscipline, int zet, int academicHours)
         {

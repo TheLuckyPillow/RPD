@@ -19,7 +19,7 @@ namespace RPD
         private List<Competence> lst = new List<Competence>(); //Список объектов класса Competence
 
 
-        F_Competencies_Popup_Comp f_Competencies_Popup; //TODO переместить в btn_AddComp...
+        F_Competencies_Popup_Comp f_Competencies_Popup; //TODO: переместить в btn_AddComp...
 
         public F_Competencies()
         {
