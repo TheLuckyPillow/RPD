@@ -67,6 +67,8 @@
             this.btn_Competencies = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.listBox_Discipline = new System.Windows.Forms.ListBox();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_ZET)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_AcademicHours)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_LectionsHours)).BeginInit();
@@ -220,7 +222,7 @@
             // 
             // btn_CreatePattern
             // 
-            this.btn_CreatePattern.Location = new System.Drawing.Point(9, 436);
+            this.btn_CreatePattern.Location = new System.Drawing.Point(9, 481);
             this.btn_CreatePattern.Name = "btn_CreatePattern";
             this.btn_CreatePattern.Size = new System.Drawing.Size(138, 27);
             this.btn_CreatePattern.TabIndex = 18;
@@ -243,7 +245,7 @@
             // 
             // btn_Save
             // 
-            this.btn_Save.Location = new System.Drawing.Point(6, 230);
+            this.btn_Save.Location = new System.Drawing.Point(9, 435);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(141, 27);
             this.btn_Save.TabIndex = 23;
@@ -274,6 +276,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.checkedListBox1);
             this.groupBox1.Controls.Add(this.comboBox_FormatAtest);
             this.groupBox1.Controls.Add(this.groupBox_Opop);
             this.groupBox1.Controls.Add(this.label7);
@@ -305,7 +309,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(327, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(852, 478);
+            this.groupBox1.Size = new System.Drawing.Size(852, 514);
             this.groupBox1.TabIndex = 26;
             this.groupBox1.TabStop = false;
             this.groupBox1.Visible = false;
@@ -434,7 +438,7 @@
             this.treeView_Competencies.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.treeView_Competencies.Location = new System.Drawing.Point(442, 246);
             this.treeView_Competencies.Name = "treeView_Competencies";
-            this.treeView_Competencies.Size = new System.Drawing.Size(394, 184);
+            this.treeView_Competencies.Size = new System.Drawing.Size(394, 229);
             this.treeView_Competencies.TabIndex = 37;
             // 
             // label13
@@ -489,7 +493,7 @@
             // 
             // btn_Competencies
             // 
-            this.btn_Competencies.Location = new System.Drawing.Point(442, 436);
+            this.btn_Competencies.Location = new System.Drawing.Point(547, 481);
             this.btn_Competencies.Name = "btn_Competencies";
             this.btn_Competencies.Size = new System.Drawing.Size(213, 27);
             this.btn_Competencies.TabIndex = 28;
@@ -516,6 +520,23 @@
             this.listBox_Discipline.Size = new System.Drawing.Size(292, 481);
             this.listBox_Discipline.TabIndex = 27;
             this.listBox_Discipline.SelectedIndexChanged += new System.EventHandler(this.listBox_Discipline_SelectedIndexChanged);
+            // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Location = new System.Drawing.Point(11, 260);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(425, 169);
+            this.checkedListBox1.TabIndex = 48;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(9, 241);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(312, 13);
+            this.label14.TabIndex = 49;
+            this.label14.Text = "Дисциплины, которые предшествуют текущей дисциплине: ";
             // 
             // F_DisciplineList
             // 
@@ -583,5 +604,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox groupBox_Opop;
         private System.Windows.Forms.ComboBox comboBox_FormatAtest;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
     }
 }
