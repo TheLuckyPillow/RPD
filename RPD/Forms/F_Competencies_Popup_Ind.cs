@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RPD.Classes;
 
 namespace RPD.Forms
 {
@@ -19,9 +20,13 @@ namespace RPD.Forms
 
         public string discription;
         public int codeNumber;
+        Style s = new Style();
 
         private void F_Competencies_Popup_Ind_Load(object sender, EventArgs e)
         {
+            s.AllStyle(this.Controls);
+            this.BackColor = s.back;
+
             textBox_Discription.Text = "Введите содержание индикатора";
             textBox_Discription.ForeColor = Color.Gray;
         }

@@ -16,7 +16,7 @@ namespace RPD.Classes
         {
             if (File.Exists(fileName))
             {
-                _fileInfo = new FileInfo(fileName); //Название файла (Шаблон_РПД_2021.docx)
+                _fileInfo = new FileInfo(fileName); //Название файла, путь, и т. д. (Шаблон_РПД_2021.docx)
             }
             else
             {
@@ -29,12 +29,10 @@ namespace RPD.Classes
             Word.Application app = null; //Application
             try
             {
-                app = new Word.Application();
-
+                Object missing = Type.Missing;
                 Object filePath = _fileInfo.FullName; //Имя файла/путь к файлу
 
-                Object missing = Type.Missing;
-
+                app = new Word.Application();
                 app.Documents.Open(filePath);
 
                 foreach (var item in items)

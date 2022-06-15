@@ -12,9 +12,17 @@ namespace RPD
 {
     public partial class FormMain : Form
     {
+        Classes.Style s = new Classes.Style();
+
         public FormMain()
         {
             InitializeComponent();
+        }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+            s.AllStyle(this.Controls);
+            this.BackColor = s.back;
         }
 
         private void btn_DisciplineList_Click(object sender, EventArgs e)

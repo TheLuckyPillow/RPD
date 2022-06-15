@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RPD.Classes;
 
 namespace RPD
 {
@@ -15,6 +16,13 @@ namespace RPD
         public F_Mail()
         {
             InitializeComponent();
+        }
+        Style s = new Style();
+
+        private void F_Mail_Load(object sender, EventArgs e)
+        {
+            s.AllStyle(this.Controls);
+            this.BackColor = s.back;
         }
 
         private void button2_Click(object sender, EventArgs e)

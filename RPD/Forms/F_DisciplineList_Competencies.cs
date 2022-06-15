@@ -16,6 +16,7 @@ namespace RPD.Forms
         private Serializer ser = new Serializer(); //объект класса Serialize для работы с файлом "save_competence.json"
         private List<Competence> lst = new List<Competence>(); //Список объектов класса Competence
         public Competence compOut = new Competence(); //компетенция, которую нужно вернуть в дисциплину
+        private Style s = new Style();
 
         public F_DisciplineList_Competencies()
         {
@@ -24,6 +25,10 @@ namespace RPD.Forms
 
         private void F_DisciplineList_Competencies_Load(object sender, EventArgs e)
         {
+            s.AllStyle(this.Controls);
+            s.AllStyle(this.groupBox_ZUV.Controls);
+            this.BackColor = s.fColBlack;
+
             lst = ser.Deserialize_List_competence(); //загрузка списка компетенций
             comboBox_Competence.DataSource = lst;
         }
@@ -54,8 +59,9 @@ namespace RPD.Forms
                 ////Создание List_CheckedListBox Знаний////
                 CheckedListBox checkedListBox1 = new CheckedListBox();
                 checkedListBox1.Name = "checkedListBox_Knowledge" + i.code; //"Класс знаний" ("checkedListBox_Knowledge" + код индикатора)
-                checkedListBox1.Location = new System.Drawing.Point(0,28);
-                checkedListBox1.Size = new System.Drawing.Size(97, 79);
+                checkedListBox1.Location = new System.Drawing.Point(0,25);
+                checkedListBox1.Size = new System.Drawing.Size(97, 100);
+                checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox_showDiscription); //ивент кликанья по знанию
                 foreach (string s in i.dictKnowledge.Keys)
                     checkedListBox1.Items.Add(s);//заполнение listbox'а знаний
                 checkedListBox1.Visible = false;
@@ -64,8 +70,9 @@ namespace RPD.Forms
                 ////Создание List_CheckedListBox Умений////
                 CheckedListBox checkedListBox2 = new CheckedListBox();
                 checkedListBox2.Name = "checkedListBox_Skills" + i.code; //"Класс умений"
-                checkedListBox2.Location = new System.Drawing.Point(0, 147);
-                checkedListBox2.Size = new System.Drawing.Size(97, 79);
+                checkedListBox2.Location = new System.Drawing.Point(0, 135);
+                checkedListBox2.Size = new System.Drawing.Size(97, 100);
+                checkedListBox2.SelectedIndexChanged += new System.EventHandler(this.checkedListBox_showDiscription);//ивент кликанья по умению
                 foreach (string s in i.dictSkills.Keys)
                     checkedListBox2.Items.Add(s);//заполнение listbox'а умений
                 checkedListBox2.Visible = false;
@@ -74,27 +81,51 @@ namespace RPD.Forms
                 ////Создание List_CheckedListBox Владений////
                 CheckedListBox checkedListBox3 = new CheckedListBox();
                 checkedListBox3.Name = "checkedListBox_Ownerships" + i.code; //"Класс владений"
-                checkedListBox3.Location = new System.Drawing.Point(0, 263);
-                checkedListBox3.Size = new System.Drawing.Size(97, 79);
+                checkedListBox3.Location = new System.Drawing.Point(0, 245);
+                checkedListBox3.Size = new System.Drawing.Size(97, 100);
+                checkedListBox3.SelectedIndexChanged += new System.EventHandler(this.checkedListBox_showDiscription);//ивент кликанья по владению
                 foreach (string s in i.dictOwnerships.Keys)
                     checkedListBox3.Items.Add(s);//заполнение listbox'а владений
                 checkedListBox3.Visible = false;
                 groupBox_ZUV.Controls.Add(checkedListBox3);
                 lstListboxesOwnerships.Add(checkedListBox3);
             }
+            s.AllStyle(this.groupBox_ZUV.Controls);//Style
+        }
+        private void checkedListBox_showDiscription(object sender, EventArgs e)
+        {
+            if ((sender as CheckedListBox).Name == "checkedListBox_Knowledge" + checkedListBox_Indicator.SelectedItem.ToString())
+                label_Knowledge.Text = lst[comboBox_Competence.SelectedIndex].lstIndicators[checkedListBox_Indicator.SelectedIndex].dictKnowledge[(sender as CheckedListBox).SelectedItem.ToString()];
+            else if ((sender as CheckedListBox).Name == "checkedListBox_Skills" + checkedListBox_Indicator.SelectedItem.ToString())
+                label_Skills.Text = lst[comboBox_Competence.SelectedIndex].lstIndicators[checkedListBox_Indicator.SelectedIndex].dictSkills[(sender as CheckedListBox).SelectedItem.ToString()];
+            else if ((sender as CheckedListBox).Name == "checkedListBox_Ownerships" + checkedListBox_Indicator.SelectedItem.ToString())
+                label_Ownerships.Text = lst[comboBox_Competence.SelectedIndex].lstIndicators[checkedListBox_Indicator.SelectedIndex].dictOwnerships[(sender as CheckedListBox).SelectedItem.ToString()];
         }
         private void checkedListBox_Indicator_SelectedIndexChanged(object sender, EventArgs e)
         {
             label_Indicator.Text = lst[comboBox_Competence.SelectedIndex].lstIndicators[checkedListBox_Indicator.SelectedIndex].discription;//вывод описания на лейбл
 
-            foreach (CheckedListBox chlb in lstListboxesKnowledge)//все листбоксы Знаний скрыть
+            foreach (CheckedListBox chlb in lstListboxesKnowledge)//Все листбоксы Знаний скрыть
+            {
                 chlb.Visible = false;
+                chlb.SelectedIndex = -1;//выделение синим снять (галочки остаются)
+            }
+
+            label_Knowledge.Text = "";
             lstListboxesKnowledge[checkedListBox_Indicator.SelectedIndex].Visible = true;//листбокс знаний по выбранному индикатору показат
-            foreach (CheckedListBox chlb in lstListboxesSkills)//Умений 
+            foreach (CheckedListBox chlb in lstListboxesSkills)//Все листбоксы Умений 
+            {
                 chlb.Visible = false;
+                chlb.SelectedIndex = -1;//выделение синим снять (галочки остаются)
+            }
+            label_Skills.Text = "";
             lstListboxesSkills[checkedListBox_Indicator.SelectedIndex].Visible = true;
-            foreach (CheckedListBox chlb in lstListboxesOwnerships)//Владений
+            foreach (CheckedListBox chlb in lstListboxesOwnerships)//Все листбоксы Владений
+            {
                 chlb.Visible = false;
+                chlb.SelectedIndex = -1;//выделение синим снять (галочки остаются)
+            }
+            label_Ownerships.Text = "";
             lstListboxesOwnerships[checkedListBox_Indicator.SelectedIndex].Visible = true;
         }
 

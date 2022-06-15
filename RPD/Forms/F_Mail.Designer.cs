@@ -96,7 +96,7 @@
             // 
             this.button1.Location = new System.Drawing.Point(332, 15);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 34);
+            this.button1.Size = new System.Drawing.Size(145, 34);
             this.button1.TabIndex = 6;
             this.button1.Text = "Добавить в список";
             this.button1.UseVisualStyleBackColor = true;
@@ -115,9 +115,9 @@
             // 
             this.button2.Location = new System.Drawing.Point(627, 403);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(125, 35);
+            this.button2.Size = new System.Drawing.Size(145, 35);
             this.button2.TabIndex = 8;
-            this.button2.Text = "отправить";
+            this.button2.Text = "Отправить";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -138,6 +138,7 @@
             this.Controls.Add(this.checkedListBox1);
             this.Name = "F_Mail";
             this.Text = "mail";
+            this.Load += new System.EventHandler(this.F_Mail_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

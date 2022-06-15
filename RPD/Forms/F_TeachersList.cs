@@ -15,7 +15,7 @@ namespace RPD
     {
         private Serializer ser = new Serializer(); //объект класса Serialize для работы с файлом "save_teachers.json"
         private List<Teachers> lst = new List<Teachers>(); //Список объектов класса Teachers
-
+        Style s = new Style();
 
         public F_TeachersList()
         {
@@ -24,6 +24,9 @@ namespace RPD
 
         private void F_TeachersList_Load(object sender, EventArgs e)
         {
+            s.AllStyle(this.Controls);
+            this.BackColor = s.back;
+
             lst = ser.Deserialize_List_teachers(); //загрузка списка преподавателей
             listBox1.DataSource = lst;
         }

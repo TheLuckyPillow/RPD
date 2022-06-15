@@ -41,22 +41,22 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(12, 35);
+            this.listBox1.Location = new System.Drawing.Point(12, 9);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(234, 342);
+            this.listBox1.Size = new System.Drawing.Size(256, 368);
             this.listBox1.TabIndex = 0;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // textBox_FIO
             // 
-            this.textBox_FIO.Location = new System.Drawing.Point(252, 35);
+            this.textBox_FIO.Location = new System.Drawing.Point(319, 12);
             this.textBox_FIO.Name = "textBox_FIO";
             this.textBox_FIO.Size = new System.Drawing.Size(159, 20);
             this.textBox_FIO.TabIndex = 1;
             // 
             // textBox_Mail
             // 
-            this.textBox_Mail.Location = new System.Drawing.Point(252, 72);
+            this.textBox_Mail.Location = new System.Drawing.Point(319, 38);
             this.textBox_Mail.Name = "textBox_Mail";
             this.textBox_Mail.Size = new System.Drawing.Size(159, 20);
             this.textBox_Mail.TabIndex = 2;
@@ -68,9 +68,9 @@
             // 
             // btn_Add
             // 
-            this.btn_Add.Location = new System.Drawing.Point(146, 383);
+            this.btn_Add.Location = new System.Drawing.Point(150, 381);
             this.btn_Add.Name = "btn_Add";
-            this.btn_Add.Size = new System.Drawing.Size(100, 23);
+            this.btn_Add.Size = new System.Drawing.Size(118, 27);
             this.btn_Add.TabIndex = 4;
             this.btn_Add.Text = "Добавить";
             this.btn_Add.UseVisualStyleBackColor = true;
@@ -78,9 +78,9 @@
             // 
             // btn_delete
             // 
-            this.btn_delete.Location = new System.Drawing.Point(12, 383);
+            this.btn_delete.Location = new System.Drawing.Point(12, 381);
             this.btn_delete.Name = "btn_delete";
-            this.btn_delete.Size = new System.Drawing.Size(100, 23);
+            this.btn_delete.Size = new System.Drawing.Size(118, 27);
             this.btn_delete.TabIndex = 5;
             this.btn_delete.Text = "Удалить";
             this.btn_delete.UseVisualStyleBackColor = true;
@@ -88,9 +88,9 @@
             // 
             // btn_Save
             // 
-            this.btn_Save.Location = new System.Drawing.Point(336, 109);
+            this.btn_Save.Location = new System.Drawing.Point(382, 64);
             this.btn_Save.Name = "btn_Save";
-            this.btn_Save.Size = new System.Drawing.Size(75, 23);
+            this.btn_Save.Size = new System.Drawing.Size(96, 27);
             this.btn_Save.TabIndex = 7;
             this.btn_Save.Text = "сохранить";
             this.btn_Save.UseVisualStyleBackColor = true;

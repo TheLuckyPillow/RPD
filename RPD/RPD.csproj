@@ -108,6 +108,7 @@
   <ItemGroup>
     <Compile Include="Classes\Competence.cs" />
     <Compile Include="Classes\Indicator.cs" />
+    <Compile Include="Classes\Style.cs" />
     <Compile Include="Classes\WordMy.cs" />
     <Compile Include="Forms\F_Competencies.cs">
       <SubType>Form</SubType>
@@ -216,9 +217,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="Resources\Шаблон_РПД_2021.docx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -277,7 +275,9 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Text.Json.6.0.4\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.4\build\System.Text.Json.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

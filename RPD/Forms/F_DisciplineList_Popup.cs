@@ -19,10 +19,13 @@ namespace RPD.Forms
         }
 
         public string disciplineName, teacherName; //переменные, которые передаются из Popup в F_DisciplineList
-
+        Style s = new Style();
 
         private void F_DisciplineList_Popup_Load(object sender, EventArgs e)
         {
+            s.AllStyle(this.Controls);
+            this.BackColor = s.fColBlack;
+
             Serializer ser = new Serializer();
             List<Teachers> teachers = new List<Teachers>(ser.Deserialize_List_teachers()); //Считывание списка преподавателей
 

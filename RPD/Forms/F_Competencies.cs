@@ -17,6 +17,7 @@ namespace RPD
     {
         private Serializer ser = new Serializer(); //объект класса Serialize для работы с файлом "save_competence.json"
         private List<Competence> lst = new List<Competence>(); //Список объектов класса Competence
+        private Style s = new Style();
 
 
         F_Competencies_Popup_Comp f_Competencies_Popup; //TODO: переместить в btn_AddComp...
@@ -28,10 +29,15 @@ namespace RPD
 
         private void F_Competencies_Load(object sender, EventArgs e)
         {
+
+            s.AllStyle(this.Controls);
+            this.BackColor = s.back;
+
             lst = ser.Deserialize_List_competence(); //загрузка списка компетенций
             listBox_Competencies.DataSource = lst;
 
             listBox_Competencies.ClearSelected();
+            TreeUpdate();
         }
         public void update()
         {
@@ -56,6 +62,9 @@ namespace RPD
                 label_competence.Text = "";
                 listBox_Indicators.DataSource = null; //не выделена комп — нет индикаторов
             }
+            label_Knowledge.Text = "";
+            label_Skills.Text = "";
+            label_Ownerships.Text = "";
         }
 
         private void btn_AddCompetencies_Click(object sender, EventArgs e)
@@ -70,6 +79,7 @@ namespace RPD
                 listBox_Competencies.DataSource = null;
                 listBox_Competencies.DataSource = lst;
             }
+            TreeUpdate();
         }
 
         private void btn_DeleteCompetencies_Click(object sender, EventArgs e)
@@ -131,6 +141,9 @@ namespace RPD
                 listBox_Skills.Items.Clear();//нет умений
                 listBox_Ownerships.Items.Clear();//и нет владений
             }
+            label_Knowledge.Text = "";
+            label_Skills.Text = "";
+            label_Ownerships.Text = "";
         }
 
         private void btn_AddIndicators_Click(object sender, EventArgs e)
@@ -156,6 +169,7 @@ namespace RPD
                     listBox_Indicators.DataSource = lst[listBox_Competencies.SelectedIndex].lstIndicators;
                 }
             }
+            TreeUpdate();
         }
 
         private void btn_DeleteIndicators_Click(object sender, EventArgs e)
@@ -190,10 +204,10 @@ namespace RPD
             lst[listBox_Competencies.SelectedIndex].lstIndicators[listBox_Indicators.SelectedIndex].discription = textBox_IndicatorEdit.Text;
             ser.Serialize_list_competence(lst);
 
-            textBox_CompetenceEdit.Visible = false;
-            btn_SaveCompetence.Visible = false;
+            textBox_IndicatorEdit.Visible = false;
+            btn_SaveIndicator.Visible = false;
 
-            listBox_Competencies.ClearSelected();
+            listBox_Indicators.ClearSelected();
         }
 
         // ------------------------------------------- З Н А Н И Я -------------------------------------------------------
@@ -236,6 +250,7 @@ namespace RPD
                     listBox_Knowledge.ClearSelected();
                 }
             }
+            TreeUpdate();
         }
 
         private void btn_DeleteKnowledge_Click(object sender, EventArgs e)
@@ -324,6 +339,7 @@ namespace RPD
                     listBox_Skills.ClearSelected();
                 }
             }
+            TreeUpdate();
         }
 
         private void btn_DeleteSkills_Click(object sender, EventArgs e)
@@ -413,6 +429,7 @@ namespace RPD
                     listBox_Ownerships.ClearSelected();
                 }
             }
+            TreeUpdate();
         }
 
         private void btn_DeleteOwnerships_Click(object sender, EventArgs e)
@@ -464,7 +481,7 @@ namespace RPD
             isEditO = false;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void TreeUpdate()
         {
             int comp_num = 0;
             foreach (Competence comp in lst)
