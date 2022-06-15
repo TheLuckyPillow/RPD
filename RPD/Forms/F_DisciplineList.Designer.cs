@@ -222,9 +222,9 @@
             // 
             // btn_CreatePattern
             // 
-            this.btn_CreatePattern.Location = new System.Drawing.Point(9, 481);
+            this.btn_CreatePattern.Location = new System.Drawing.Point(207, 499);
             this.btn_CreatePattern.Name = "btn_CreatePattern";
-            this.btn_CreatePattern.Size = new System.Drawing.Size(138, 27);
+            this.btn_CreatePattern.Size = new System.Drawing.Size(97, 36);
             this.btn_CreatePattern.TabIndex = 18;
             this.btn_CreatePattern.Text = "Создать шаблон";
             this.btn_CreatePattern.UseVisualStyleBackColor = true;
@@ -235,9 +235,9 @@
             this.btn_Add.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btn_Add.FlatAppearance.BorderSize = 0;
             this.btn_Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Add.Location = new System.Drawing.Point(155, 499);
+            this.btn_Add.Location = new System.Drawing.Point(108, 499);
             this.btn_Add.Name = "btn_Add";
-            this.btn_Add.Size = new System.Drawing.Size(125, 27);
+            this.btn_Add.Size = new System.Drawing.Size(93, 36);
             this.btn_Add.TabIndex = 22;
             this.btn_Add.Text = "Добавить";
             this.btn_Add.UseVisualStyleBackColor = false;
@@ -245,9 +245,9 @@
             // 
             // btn_Save
             // 
-            this.btn_Save.Location = new System.Drawing.Point(9, 435);
+            this.btn_Save.Location = new System.Drawing.Point(118, 481);
             this.btn_Save.Name = "btn_Save";
-            this.btn_Save.Size = new System.Drawing.Size(141, 27);
+            this.btn_Save.Size = new System.Drawing.Size(213, 27);
             this.btn_Save.TabIndex = 23;
             this.btn_Save.Text = "Сохранить";
             this.btn_Save.UseVisualStyleBackColor = true;
@@ -266,9 +266,9 @@
             // 
             // btn_delete
             // 
-            this.btn_delete.Location = new System.Drawing.Point(24, 499);
+            this.btn_delete.Location = new System.Drawing.Point(12, 499);
             this.btn_delete.Name = "btn_delete";
-            this.btn_delete.Size = new System.Drawing.Size(125, 27);
+            this.btn_delete.Size = new System.Drawing.Size(90, 36);
             this.btn_delete.TabIndex = 25;
             this.btn_delete.Text = "Удалить";
             this.btn_delete.UseVisualStyleBackColor = true;
@@ -281,9 +281,8 @@
             this.groupBox1.Controls.Add(this.comboBox_FormatAtest);
             this.groupBox1.Controls.Add(this.groupBox_Opop);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.comboBox_Semester);
             this.groupBox1.Controls.Add(this.btn_Save);
-            this.groupBox1.Controls.Add(this.btn_CreatePattern);
+            this.groupBox1.Controls.Add(this.comboBox_Semester);
             this.groupBox1.Controls.Add(this.comboBox_Year);
             this.groupBox1.Controls.Add(this.treeView_Competencies);
             this.groupBox1.Controls.Add(this.label13);
@@ -493,7 +492,7 @@
             // 
             // btn_Competencies
             // 
-            this.btn_Competencies.Location = new System.Drawing.Point(547, 481);
+            this.btn_Competencies.Location = new System.Drawing.Point(544, 481);
             this.btn_Competencies.Name = "btn_Competencies";
             this.btn_Competencies.Size = new System.Drawing.Size(213, 27);
             this.btn_Competencies.TabIndex = 28;
@@ -524,15 +523,15 @@
             // checkedListBox1
             // 
             this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(11, 260);
+            this.checkedListBox1.Location = new System.Drawing.Point(11, 249);
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(425, 169);
+            this.checkedListBox1.Size = new System.Drawing.Size(425, 229);
             this.checkedListBox1.TabIndex = 48;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(9, 241);
+            this.label14.Location = new System.Drawing.Point(9, 230);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(312, 13);
             this.label14.TabIndex = 49;
@@ -547,6 +546,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.btn_Add);
+            this.Controls.Add(this.btn_CreatePattern);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "F_DisciplineList";
             this.Text = "Список дисциплин";
