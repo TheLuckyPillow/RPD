@@ -46,15 +46,25 @@ namespace RPD.Classes
 
         public string disciplineName { get; set; }
         public string teachersName { get; set; }
+        public int cource { get; set; }
+        public int semester { get; set; }
+        public string typeOfAttestation { get; set; }
         public int zet { get; set; }
         public int academicHours { get; set; }
         public int lectionsHours { get; set; }
         public int seminarsHours { get; set; }
         public int homeworkHours { get; set; }
+        public int controlHours { get; set; }
+        List<String> lstDisciplinesBefore { get; set; }
+        public string oPOP { get; set; }
         public List<Competence> lstCompetencies { get; set; }
         public void lstCompetenciesInicialize()
         {
             lstCompetencies = new List<Competence>();
+        }
+        public void lstDisciplinesBeforeInicialize()
+        {
+            lstDisciplinesBefore = new List<string>();
         }
         public override string ToString()
         {

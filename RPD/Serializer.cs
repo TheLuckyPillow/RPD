@@ -14,9 +14,9 @@ namespace RPD
 {
     class Serializer
     {
-        string path_discipline = "../../Resources/save_discipline.json";
         string path_teachers = "../../Resources/save_teachers.json";
         string path_competence = "../../Resources/save_competence.json";
+        string path_discipline = "../../Resources/save_discipline.json";
         //возвращает список объектов класса Discipline из файла save_discipline.json
         public List<Discipline> Deserialize_List_discipline()
         {
@@ -34,7 +34,6 @@ namespace RPD
                 return d_list;
             }
         }
-
         //перезаписывает список объектов класса Discipline в файл save_discipline.json
         public void Serialize_list_discipline(List<Discipline> d)
         {

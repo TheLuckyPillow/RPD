@@ -48,6 +48,7 @@
             this.comboBox_TeachersName = new System.Windows.Forms.ComboBox();
             this.btn_delete = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.comboBox_FormatAtest = new System.Windows.Forms.ComboBox();
             this.groupBox_Opop = new System.Windows.Forms.GroupBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
@@ -67,8 +68,9 @@
             this.btn_Competencies = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.listBox_Discipline = new System.Windows.Forms.ListBox();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.label14 = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_ZET)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_AcademicHours)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_LectionsHours)).BeginInit();
@@ -222,9 +224,9 @@
             // 
             // btn_CreatePattern
             // 
-            this.btn_CreatePattern.Location = new System.Drawing.Point(207, 499);
+            this.btn_CreatePattern.Location = new System.Drawing.Point(207, 493);
             this.btn_CreatePattern.Name = "btn_CreatePattern";
-            this.btn_CreatePattern.Size = new System.Drawing.Size(97, 36);
+            this.btn_CreatePattern.Size = new System.Drawing.Size(97, 42);
             this.btn_CreatePattern.TabIndex = 18;
             this.btn_CreatePattern.Text = "Создать шаблон";
             this.btn_CreatePattern.UseVisualStyleBackColor = true;
@@ -235,9 +237,9 @@
             this.btn_Add.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btn_Add.FlatAppearance.BorderSize = 0;
             this.btn_Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Add.Location = new System.Drawing.Point(108, 499);
+            this.btn_Add.Location = new System.Drawing.Point(108, 493);
             this.btn_Add.Name = "btn_Add";
-            this.btn_Add.Size = new System.Drawing.Size(93, 36);
+            this.btn_Add.Size = new System.Drawing.Size(93, 42);
             this.btn_Add.TabIndex = 22;
             this.btn_Add.Text = "Добавить";
             this.btn_Add.UseVisualStyleBackColor = false;
@@ -245,7 +247,7 @@
             // 
             // btn_Save
             // 
-            this.btn_Save.Location = new System.Drawing.Point(118, 481);
+            this.btn_Save.Location = new System.Drawing.Point(336, 481);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(213, 27);
             this.btn_Save.TabIndex = 23;
@@ -266,9 +268,9 @@
             // 
             // btn_delete
             // 
-            this.btn_delete.Location = new System.Drawing.Point(12, 499);
+            this.btn_delete.Location = new System.Drawing.Point(12, 493);
             this.btn_delete.Name = "btn_delete";
-            this.btn_delete.Size = new System.Drawing.Size(90, 36);
+            this.btn_delete.Size = new System.Drawing.Size(90, 42);
             this.btn_delete.TabIndex = 25;
             this.btn_delete.Text = "Удалить";
             this.btn_delete.UseVisualStyleBackColor = true;
@@ -276,8 +278,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.listBox1);
             this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.checkedListBox1);
             this.groupBox1.Controls.Add(this.comboBox_FormatAtest);
             this.groupBox1.Controls.Add(this.groupBox_Opop);
             this.groupBox1.Controls.Add(this.label7);
@@ -312,6 +316,15 @@
             this.groupBox1.TabIndex = 26;
             this.groupBox1.TabStop = false;
             this.groupBox1.Visible = false;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(9, 230);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(312, 13);
+            this.label14.TabIndex = 49;
+            this.label14.Text = "Дисциплины, которые предшествуют текущей дисциплине: ";
             // 
             // comboBox_FormatAtest
             // 
@@ -437,7 +450,7 @@
             this.treeView_Competencies.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.treeView_Competencies.Location = new System.Drawing.Point(442, 246);
             this.treeView_Competencies.Name = "treeView_Competencies";
-            this.treeView_Competencies.Size = new System.Drawing.Size(394, 229);
+            this.treeView_Competencies.Size = new System.Drawing.Size(394, 186);
             this.treeView_Competencies.TabIndex = 37;
             // 
             // label13
@@ -492,9 +505,9 @@
             // 
             // btn_Competencies
             // 
-            this.btn_Competencies.Location = new System.Drawing.Point(544, 481);
+            this.btn_Competencies.Location = new System.Drawing.Point(442, 438);
             this.btn_Competencies.Name = "btn_Competencies";
-            this.btn_Competencies.Size = new System.Drawing.Size(213, 27);
+            this.btn_Competencies.Size = new System.Drawing.Size(394, 27);
             this.btn_Competencies.TabIndex = 28;
             this.btn_Competencies.Text = "Редактрировать компетенции";
             this.btn_Competencies.UseVisualStyleBackColor = true;
@@ -507,7 +520,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(75, 13);
             this.label8.TabIndex = 27;
-            this.label8.Text = "Компетенция";
+            this.label8.Text = "Компетенции";
             // 
             // listBox_Discipline
             // 
@@ -516,26 +529,42 @@
             this.listBox_Discipline.FormattingEnabled = true;
             this.listBox_Discipline.Location = new System.Drawing.Point(12, 12);
             this.listBox_Discipline.Name = "listBox_Discipline";
-            this.listBox_Discipline.Size = new System.Drawing.Size(292, 481);
+            this.listBox_Discipline.Size = new System.Drawing.Size(292, 468);
             this.listBox_Discipline.TabIndex = 27;
             this.listBox_Discipline.SelectedIndexChanged += new System.EventHandler(this.listBox_Discipline_SelectedIndexChanged);
             // 
-            // checkedListBox1
+            // listBox1
             // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(11, 249);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(425, 229);
-            this.checkedListBox1.TabIndex = 48;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Items.AddRange(new object[] {
+            "Введение в программирование;",
+            "Объектно-ориентированное программирование;",
+            "Архитектура вычислительных систем;",
+            "Базы данных;",
+            "Структуры алгоритмов и обработки данных;",
+            "Веб-технологии"});
+            this.listBox1.Location = new System.Drawing.Point(12, 246);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(424, 186);
+            this.listBox1.TabIndex = 50;
             // 
-            // label14
+            // button1
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(9, 230);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(312, 13);
-            this.label14.TabIndex = 49;
-            this.label14.Text = "Дисциплины, которые предшествуют текущей дисциплине: ";
+            this.button1.Location = new System.Drawing.Point(12, 438);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(202, 27);
+            this.button1.TabIndex = 51;
+            this.button1.Text = "Добавить";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(234, 438);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(202, 27);
+            this.button2.TabIndex = 52;
+            this.button2.Text = "Удалить";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // F_DisciplineList
             // 
@@ -605,6 +634,8 @@
         private System.Windows.Forms.GroupBox groupBox_Opop;
         private System.Windows.Forms.ComboBox comboBox_FormatAtest;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }

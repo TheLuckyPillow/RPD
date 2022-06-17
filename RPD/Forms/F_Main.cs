@@ -89,7 +89,7 @@ namespace RPD
         private void btn_DisciplineLoad_Click(object sender, EventArgs e)
         {
             //----------------------- список дисциплин из plx файла программы-------------------------------------
-            XDocument xdoc = XDocument.Load("test.xml");//TODO проверка на файл exist
+            XDocument xdoc = XDocument.Load("../../Resources/test.xml");//TODO проверка на файл exist
             XElement dataSet = xdoc.Element("Документ");
             foreach (XElement itemDataSet in dataSet.Elements("ПланыСтроки"))
             {

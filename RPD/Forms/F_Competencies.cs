@@ -17,7 +17,7 @@ namespace RPD
     {
         private Serializer ser = new Serializer(); //объект класса Serialize для работы с файлом "save_competence.json"
         private List<Competence> lst = new List<Competence>(); //Список объектов класса Competence
-        private Style s = new Style();
+        private Style s = new Style(); //Класс стилей для оформления формы
 
 
         F_Competencies_Popup_Comp f_Competencies_Popup; //TODO: переместить в btn_AddComp...
@@ -29,7 +29,6 @@ namespace RPD
 
         private void F_Competencies_Load(object sender, EventArgs e)
         {
-
             s.AllStyle(this.Controls);
             this.BackColor = s.back;
 
@@ -483,6 +482,7 @@ namespace RPD
 
         private void TreeUpdate()
         {
+            treeView1.Nodes.Clear();
             int comp_num = 0;
             foreach (Competence comp in lst)
             {
