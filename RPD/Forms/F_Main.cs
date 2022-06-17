@@ -52,6 +52,7 @@ namespace RPD
        
         private List<Discipline> lst = new List<Discipline>();
         private List<Teachers> lst_teachers = new List<Teachers>();
+        private List<Competence> lst_competences = new List<Competence>();
         private Serializer ser = new Serializer();
         private void button3_Click(object sender, EventArgs e)
         {
@@ -65,21 +66,12 @@ namespace RPD
             Excel.Workbook ObjWorkBook = excelApp.Workbooks.Open(pathToFile);
                 //, 0, false, 5, "", "", false, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "", true, false, 0, true, false, false);
             Excel.Worksheet ObjWorkSheet = (Excel.Worksheet)ObjWorkBook.Sheets[1];
-            // Указываем номер столбца (таблицы Excel) из которого будут считываться данные.
             int count = Convert.ToInt32(ObjWorkSheet.Cells[1, 1].value) + 2;
-            //count = 5; 
             for (int i = 2; i < count; i++)
             {
                 lst_teachers.Add(new Teachers(ObjWorkSheet.Cells[i, 2].value, ObjWorkSheet.Cells[i, 3].value));
             }
             ser.Serialize_list_teachers(lst_teachers);
-            //string t = ObjWorkSheet.Cells[2, 2].value;
-
-            //label_test.Text = ObjWorkSheet.Cells[2, 2].value;
-            // Range usedColumn = ObjWorkSheet.UsedRange.Columns[numCol];
-            //System.Array myvalues = (System.Array)usedColumn.Cells.Value2;
-            //string[] strArray = myvalues.OfType<object>().Select(o => o.ToString()).ToArray();
-
             // Выходим из программы Excel.
             // TODO исправить: Excel не закрывается!
             excelApp.Quit();
@@ -103,6 +95,88 @@ namespace RPD
                 lst.Add(new Discipline(disciplineName, zet, academicHours));
             }
             ser.Serialize_list_discipline(lst); //перезапись файла сохранения с новыми пар-рами
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string pathToFile = "C:\\Users\\Таня\\Desktop\\RPD\\RPD\\Resources\\matritsa.xlsx";
+            Excel.Application excelApp = new Excel.Application();
+            Excel.Workbook ObjWorkBook = excelApp.Workbooks.Open(pathToFile);
+            //, 0, false, 5, "", "", false, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "", true, false, 0, true, false, false);
+            Excel.Worksheet ObjWorkSheet = (Excel.Worksheet)ObjWorkBook.Sheets[1];
+            String comp_code = "УК";
+            Competence competence = null;
+            Indicator indicator = null;
+            // номер компетнции
+            int comp_codeNumber = 1;
+            int i = 1;
+            // пока есть данные
+            while(ObjWorkSheet.Cells[i, 1].value != null)
+            {
+                // если компетенции нет, значит нужно добавить к предыдущей
+                var a = ObjWorkSheet.Cells[i, 2].value;
+                while (a == null && ObjWorkSheet.Cells[i, 1].value != null)
+                {
+                    if (ObjWorkSheet.Cells[i, 3].value != null)
+                    {
+                        indicator = new Indicator(competence.code, Convert.ToInt32(ObjWorkSheet.Cells[i, 3].value), ObjWorkSheet.Cells[i, 4].value);
+                        this.add_zuv(indicator, ObjWorkSheet.Cells[i, 5].value.ToString());
+                    }
+                    bool f = true;
+                    while (ObjWorkSheet.Cells[i, 3].value == null && ObjWorkSheet.Cells[i, 1].value != null)
+                    {
+                        this.add_zuv(indicator, ObjWorkSheet.Cells[i, 5].value.ToString());
+                        i++;
+                        f = false;
+                    }
+                    if (ObjWorkSheet.Cells[i, 3].value != null && indicator != null) competence.lstIndicators.Add(indicator);
+                    if (f) i++;
+                    else f = true;
+                    a = ObjWorkSheet.Cells[i, 2].value;
+                }
+                if (a != null && competence != null)
+                {
+                    lst_competences.Add(competence);
+                    competence = null;
+                    comp_codeNumber++;
+                }
+                if (ObjWorkSheet.Cells[i, 1].value == null)
+                {
+                    break;
+                }
+                competence = new Competence(comp_code, comp_codeNumber, ObjWorkSheet.Cells[i, 2].value);
+                indicator = new Indicator(competence.code, Convert.ToInt32(ObjWorkSheet.Cells[i, 3].value), ObjWorkSheet.Cells[i, 4].value);
+                this.add_zuv(indicator, ObjWorkSheet.Cells[i, 5].value.ToString());
+                competence.lstIndicators.Add(indicator);
+                //indicator = null;
+                i++;
+                
+                
+           }
+            excelApp.Quit();
+            ser.Serialize_list_competence(lst_competences);
+            
+            
+
+        }
+        // добавить ЗУВ
+        private void add_zuv(Indicator indicator, string zuv_value)
+        {
+            string num = zuv_value.ToString()[0].ToString();
+            char a = zuv_value.ToString()[3];
+             string _code = a.ToString().ToUpper() + num + indicator.code;
+            if (a == 'З')
+            {
+                indicator.dictKnowledge.Add(_code, zuv_value);
+            }
+            else if (a == 'У')
+            {
+                indicator.dictSkills.Add(_code, zuv_value);
+            }
+            else if (a == 'В')
+            {
+                indicator.dictOwnerships.Add(_code, zuv_value);
+            }
         }
     }
 }
