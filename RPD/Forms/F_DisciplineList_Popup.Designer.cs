@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_DisciplineList_Popup));
             this.btn_Add = new System.Windows.Forms.Button();
             this.btn_Cancel = new System.Windows.Forms.Button();
             this.textBox_DisciplineName = new System.Windows.Forms.TextBox();
@@ -101,8 +102,9 @@
             this.Controls.Add(this.textBox_DisciplineName);
             this.Controls.Add(this.btn_Cancel);
             this.Controls.Add(this.btn_Add);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "F_DisciplineList_Popup";
-            this.Text = "F_DisciplineList_Popup";
+            this.Text = "Добавить дисциплину";
             this.Load += new System.EventHandler(this.F_DisciplineList_Popup_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

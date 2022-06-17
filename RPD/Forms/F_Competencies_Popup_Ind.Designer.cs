@@ -29,6 +29,7 @@ namespace RPD.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_Competencies_Popup_Ind));
             this.btn_Add = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox_codeNumber = new System.Windows.Forms.TextBox();
@@ -92,8 +93,9 @@ namespace RPD.Forms
             this.Controls.Add(this.textBox_codeNumber);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_Add);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "F_Competencies_Popup_Ind";
-            this.Text = "F_Competencies_Popup_Ind";
+            this.Text = "Добавить";
             this.Load += new System.EventHandler(this.F_Competencies_Popup_Ind_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

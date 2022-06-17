@@ -29,6 +29,7 @@ namespace RPD.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_DisciplineList_Competencies));
             this.label9 = new System.Windows.Forms.Label();
             this.label_Knowledge = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -262,8 +263,9 @@ namespace RPD.Forms
             this.Controls.Add(this.label_Skills);
             this.Controls.Add(this.label_Indicator);
             this.Controls.Add(this.label_Competence);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "F_DisciplineList_Competencies";
-            this.Text = "F_DisciplineList_Competencies";
+            this.Text = "Добавить компетенцию";
             this.Load += new System.EventHandler(this.F_DisciplineList_Competencies_Load);
             this.groupBox_ZUV.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

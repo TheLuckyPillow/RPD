@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_TeachersList));
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.textBox_FIO = new System.Windows.Forms.TextBox();
             this.textBox_Mail = new System.Windows.Forms.TextBox();
@@ -107,8 +108,9 @@
             this.Controls.Add(this.textBox_Mail);
             this.Controls.Add(this.textBox_FIO);
             this.Controls.Add(this.listBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "F_TeachersList";
-            this.Text = "F_TeachersList";
+            this.Text = "Список преподавателей";
             this.Load += new System.EventHandler(this.F_TeachersList_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

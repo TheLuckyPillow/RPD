@@ -16,25 +16,15 @@ namespace RPD.Classes
             this.codeKey = codeKey;
             this.codeNumber = codeNumber;
             this.discription = discription;
-
             this.code = codeKey + "-" + codeNumber.ToString();
-            lstIndicators = new List<Indicator>();
+            //lstIndicators = new List<Indicator>();
         }
-
         public string codeKey { get; set; }
         public int codeNumber { get; set; }
         public string code { get; set; }
-
         public string discription { get; set; }
-
         public List<Indicator> lstIndicators { get; set; }
-
-        public object Clone()
-        {
-            return new Competence(this.codeKey, this.codeNumber, this.discription);
-        }
-
-        //метод для принудительного создания листа в объекте, потому как если он создается через конструктор в итоге в него нельзя ничего добавить т.к. = NULL
+        //метод для принудительного создания листа в объекте
         public void lstIndicatorInicialize()
         {
             lstIndicators = new List<Indicator>();
@@ -43,8 +33,11 @@ namespace RPD.Classes
         {
             return code;
         }
+        public object Clone()
+        {
+            return new Competence(this.codeKey, this.codeNumber, this.discription);
+        }
 
-      
 
     }
 }

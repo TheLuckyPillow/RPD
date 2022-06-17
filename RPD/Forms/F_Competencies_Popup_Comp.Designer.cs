@@ -29,6 +29,7 @@ namespace RPD.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_Competencies_Popup_Comp));
             this.textBox_codeKey = new System.Windows.Forms.TextBox();
             this.textBox_Discription = new System.Windows.Forms.TextBox();
             this.btn_Add = new System.Windows.Forms.Button();
@@ -135,6 +136,7 @@ namespace RPD.Forms
             this.Controls.Add(this.btn_Add);
             this.Controls.Add(this.textBox_Discription);
             this.Controls.Add(this.textBox_codeKey);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "F_Competencies_Popup_Comp";
             this.Text = "Добавить компетенцию";
             this.Load += new System.EventHandler(this.F_Competencies_Popup_Load);

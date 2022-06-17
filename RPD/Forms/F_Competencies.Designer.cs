@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_Competencies));
             this.listBox_Competencies = new System.Windows.Forms.ListBox();
             this.listBox_Indicators = new System.Windows.Forms.ListBox();
             this.listBox_Skills = new System.Windows.Forms.ListBox();
@@ -569,6 +570,7 @@
             this.Controls.Add(this.listBox_Skills);
             this.Controls.Add(this.listBox_Indicators);
             this.Controls.Add(this.listBox_Competencies);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "F_Competencies";
             this.Text = "Общий список компетенций";
             this.Load += new System.EventHandler(this.F_Competencies_Load);

@@ -28,12 +28,8 @@ namespace RPD
             s.AllStyle(this.groupBox1.Controls);
             s.AllStyle(this.Controls);
             s.AllStyle(this.groupBox_Opop.Controls);
-            
             this.BackColor = s.back;
 
-            
-
-    
             lst = ser.Deserialize_List_discipline(); //загрузка списка дисциплин из файла ""save_discipline.json"
             listBox_Discipline.ClearSelected();
             listBox_Discipline.DataSource = lst;
