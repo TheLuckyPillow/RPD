@@ -37,29 +37,32 @@
             this.btn_Add = new System.Windows.Forms.Button();
             this.btn_delete = new System.Windows.Forms.Button();
             this.btn_Save = new System.Windows.Forms.Button();
+            this.btn_Mail = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(12, 9);
+            this.listBox1.Location = new System.Drawing.Point(12, 87);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(256, 368);
+            this.listBox1.Size = new System.Drawing.Size(256, 381);
             this.listBox1.TabIndex = 0;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // textBox_FIO
             // 
-            this.textBox_FIO.Location = new System.Drawing.Point(319, 12);
+            this.textBox_FIO.Location = new System.Drawing.Point(50, 2);
             this.textBox_FIO.Name = "textBox_FIO";
-            this.textBox_FIO.Size = new System.Drawing.Size(159, 20);
+            this.textBox_FIO.Size = new System.Drawing.Size(218, 20);
             this.textBox_FIO.TabIndex = 1;
             // 
             // textBox_Mail
             // 
-            this.textBox_Mail.Location = new System.Drawing.Point(319, 38);
+            this.textBox_Mail.Location = new System.Drawing.Point(50, 28);
             this.textBox_Mail.Name = "textBox_Mail";
-            this.textBox_Mail.Size = new System.Drawing.Size(159, 20);
+            this.textBox_Mail.Size = new System.Drawing.Size(218, 20);
             this.textBox_Mail.TabIndex = 2;
             // 
             // contextMenuStrip1
@@ -69,7 +72,7 @@
             // 
             // btn_Add
             // 
-            this.btn_Add.Location = new System.Drawing.Point(150, 381);
+            this.btn_Add.Location = new System.Drawing.Point(150, 474);
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Size = new System.Drawing.Size(118, 27);
             this.btn_Add.TabIndex = 4;
@@ -79,7 +82,7 @@
             // 
             // btn_delete
             // 
-            this.btn_delete.Location = new System.Drawing.Point(12, 381);
+            this.btn_delete.Location = new System.Drawing.Point(12, 474);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(118, 27);
             this.btn_delete.TabIndex = 5;
@@ -89,19 +92,50 @@
             // 
             // btn_Save
             // 
-            this.btn_Save.Location = new System.Drawing.Point(382, 64);
+            this.btn_Save.Location = new System.Drawing.Point(12, 54);
             this.btn_Save.Name = "btn_Save";
-            this.btn_Save.Size = new System.Drawing.Size(96, 27);
+            this.btn_Save.Size = new System.Drawing.Size(256, 27);
             this.btn_Save.TabIndex = 7;
-            this.btn_Save.Text = "сохранить";
+            this.btn_Save.Text = "Сохранить ФИО и Email";
             this.btn_Save.UseVisualStyleBackColor = true;
             this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
+            // 
+            // btn_Mail
+            // 
+            this.btn_Mail.Location = new System.Drawing.Point(12, 514);
+            this.btn_Mail.Name = "btn_Mail";
+            this.btn_Mail.Size = new System.Drawing.Size(256, 27);
+            this.btn_Mail.TabIndex = 8;
+            this.btn_Mail.Text = "Рассылка дисциплин";
+            this.btn_Mail.UseVisualStyleBackColor = true;
+            this.btn_Mail.Click += new System.EventHandler(this.btn_Mail_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(37, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "ФИО:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(9, 38);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Email:";
             // 
             // F_TeachersList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(286, 545);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btn_Mail);
             this.Controls.Add(this.btn_Save);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.btn_Add);
@@ -126,5 +160,8 @@
         private System.Windows.Forms.Button btn_Add;
         private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.Button btn_Save;
+        private System.Windows.Forms.Button btn_Mail;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

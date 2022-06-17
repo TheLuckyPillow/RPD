@@ -104,6 +104,7 @@
   <ItemGroup>
     <Compile Include="Classes\Competence.cs" />
     <Compile Include="Classes\Indicator.cs" />
+    <Compile Include="Classes\MailSender.cs" />
     <Compile Include="Classes\Style.cs" />
     <Compile Include="Classes\WordMy.cs" />
     <Compile Include="Forms\F_Competencies.cs">
