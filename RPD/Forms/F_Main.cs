@@ -104,5 +104,6 @@ namespace RPD
             }
             ser.Serialize_list_discipline(lst); //перезапись файла сохранения с новыми пар-рами
         }
+
     }
 }

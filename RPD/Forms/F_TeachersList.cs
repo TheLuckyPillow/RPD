@@ -65,7 +65,14 @@ namespace RPD
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            textBox_FIO.Text = lst[listBox1.SelectedIndex].fIO;
+            textBox_Mail.Text = lst[listBox1.SelectedIndex].mail;
+        }
 
+        private void btn_Mail_Click(object sender, EventArgs e)
+        {
+            F_Mail f_mail = new F_Mail();
+            f_mail.Show();
         }
     }
 }
